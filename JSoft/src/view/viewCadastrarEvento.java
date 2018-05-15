@@ -5,15 +5,29 @@
  */
 package view;
 
+import DAO.EventoDAO;
+import javax.swing.JOptionPane;
+import model.Evento;
+
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewCadastrarEvento extends javax.swing.JFrame {
 
     /**
      * Creates new form viewCadastrarEvento
      */
+    public viewCadastrarEvento() {
+        initComponents();
+        
+        jcFaixa.removeAllItems();
+        jcFaixa.addItem("Infantil");
+        jcFaixa.addItem("Juvenil");
+        jcFaixa.addItem("Junior");
+        jcFaixa.addItem("Bangai");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -150,11 +164,27 @@ public class viewCadastrarEvento extends javax.swing.JFrame {
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
-
+        dispose();
+        new viewInicial().setVisible(true);
     }//GEN-LAST:event_btCancelarActionPerformed
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        // TODO add your handling code here:  
+        // TODO add your handling code here:
+        if(jtNome.getText().toString().equals("")
+                || jtData.getText().toString().equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!!");
+            
+        } else{
+            
+            Evento e = new Evento(jtNome.getText().toString(), jtData.getText().toString(), jcFaixa.getSelectedItem().toString());
+            EventoDAO edao = new EventoDAO();
+            edao.adiciona(e);
+            
+            dispose();
+            new viewInicial().setVisible(true);
+            
+        }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void jcFaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcFaixaActionPerformed

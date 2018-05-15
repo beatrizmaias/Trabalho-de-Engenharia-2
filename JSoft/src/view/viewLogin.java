@@ -5,17 +5,24 @@
  */
 package view;
 
-
+import conexao.ConectaBanco;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @
  */
 public class viewLogin extends javax.swing.JFrame {
+
+    ConectaBanco conecta = new ConectaBanco();
+    
     /**
      * Creates new form viewLogin
      */
-    
+    public viewLogin() {
+        initComponents();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -96,14 +103,35 @@ public class viewLogin extends javax.swing.JFrame {
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
         // TODO add your handling code here:
+        conecta.conexao();
         
-        
+        try {
+            conecta.executaSQL("select * from usuario");
+            conecta.rs.first();
+            String senha = (conecta.rs.getString("senha"));
+            
+            if(jtSenha.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Informe uma senha!!!");
+            } else{
+                if(jtSenha.getText().toString().equals(senha)){
+                    dispose();
+                    new viewInicial().setVisible(true);
+                } else{
+                    JOptionPane.showMessageDialog(null, "Senha incorreta!");
+                    jtSenha.setText("");
+                }
+            }
+            
+        } catch (Exception e) {
+        }
         
     }//GEN-LAST:event_btEntrarActionPerformed
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
-       
+        if(JOptionPane.showConfirmDialog(null, "Deseja realmente sair?")==0){
+            System.exit(0);
+        }
     }//GEN-LAST:event_btCancelarActionPerformed
 
     /**

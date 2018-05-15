@@ -5,15 +5,90 @@
  */
 package view;
 
+import DAO.EventoDAO;
+import DAO.EventoParticipanteDAO;
+import conexao.ConectaBanco;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import model.ModeloTabela;
+
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewCampeonatos extends javax.swing.JFrame {
 
+    ConectaBanco conecta = new ConectaBanco();
+    ConectaBanco conecta2 = new ConectaBanco();
+    int id;
+
     /**
      * Creates new form viewCampeonatos
-     */   
+     */
+    public viewCampeonatos() {
+        initComponents();
+        jcEventos.removeAllItems();
+
+        EventoDAO edao = new EventoDAO();
+        ArrayList<String> nomes = new ArrayList<>();
+        nomes = edao.retornaTodos();
+        
+        for(int i=0; i<nomes.size(); i++){
+            jcEventos.addItem(nomes.get(i));
+        }
+    }
+
+    public void preencherTabela(String sql){
+        ArrayList dados = new ArrayList();
+        ArrayList<Integer> dado = new ArrayList();
+//        int dado;
+        ArrayList nomes = new ArrayList();
+        String[] colunas = new String[]{"Participante"};
+                
+        conecta.executaSQL(sql);
+        try {
+            conecta.rs.first();
+            do{
+//                dados.add(new Object[]{conecta.rs.getInt("id_participante")});
+                dado.add(conecta.rs.getInt("id_participante"));
+                System.out.println(""+dado);
+            } while(conecta.rs.next());
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Dado inválido ou inexistente!");
+        }
+        
+        for(int i=0; i<dado.size(); i++){
+            System.out.println("ID - "+dado.get(i));
+            conecta.executaSQL("select nome from associado where id='"+dado.get(i)+"'");
+            try {
+                conecta.rs.first();
+                    nomes.add(new Object[]{conecta.rs.getString("nome")});
+                    System.out.println(""+nomes.get(i));
+
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Dado inválido ou inexistente!"+ex.getMessage());
+            }
+
+        }
+
+        
+        ModeloTabela modelo = new ModeloTabela(nomes, colunas);
+        
+        Tabela.setModel(modelo);
+        Tabela.getColumnModel().getColumn(0).setPreferredWidth(200);
+        Tabela.getColumnModel().getColumn(0).setResizable(false);
+
+        Tabela.getTableHeader().setReorderingAllowed(false);
+        Tabela.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        Tabela.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
+    }    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -99,12 +174,33 @@ public class viewCampeonatos extends javax.swing.JFrame {
     private void btEscolherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEscolherActionPerformed
         // TODO add your handling code here:
 
+        conecta.conexao();
+        String cmd = "select distinct id_participante from evento_participante e inner join evento ev where "+Integer.parseInt(jcEventos.getSelectedItem().toString())+"=e.id_evento";
+        
+        ArrayList<String> results = new ArrayList<>();
+        
+        Statement stmt;
+        ResultSet dados=null;
+        conecta.conexao();
+        try {
+            stmt = conecta.conn.prepareStatement(cmd);
+            dados = stmt.executeQuery(cmd);
+            while(dados.next()){
+                String usuario = ""+dados.getString(1);
+                results.add(usuario);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }
+        
+        preencherTabela(cmd);
         
     }//GEN-LAST:event_btEscolherActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         // TODO add your handling code here:
-       
+        dispose();
+        new viewInicial().setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     /**

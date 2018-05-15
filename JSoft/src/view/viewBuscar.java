@@ -14,7 +14,10 @@ public class viewBuscar extends javax.swing.JFrame {
     /**
      * Creates new form viewCadastrar
      */
-    
+    public viewBuscar() {
+        initComponents();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,17 +98,20 @@ public class viewBuscar extends javax.swing.JFrame {
 
     private void btCadastrarCampeonatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarCampeonatoActionPerformed
         // TODO add your handling code here:
-
+        dispose();
+        new viewCadastrarEvento().setVisible(true);
     }//GEN-LAST:event_btCadastrarCampeonatoActionPerformed
 
     private void btCadastrarAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarAssociadoActionPerformed
         // TODO add your handling code here:
-
+        dispose();
+        new viewBuscarEvento().setVisible(true);
     }//GEN-LAST:event_btCadastrarAssociadoActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
         // TODO add your handling code here:
-
+        dispose();
+        new viewInicial().setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
 
     /**

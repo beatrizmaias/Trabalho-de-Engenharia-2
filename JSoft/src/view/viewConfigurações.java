@@ -5,16 +5,26 @@
  */
 package view;
 
+import DAO.SenhaDAO;
+import conexao.ConectaBanco;
+import javax.swing.JOptionPane;
+import model.Senha;
+
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewConfigurações extends javax.swing.JFrame {
     
+    ConectaBanco conecta = new ConectaBanco();
     
     /**
      * Creates new form viewConfigurações
      */
+    public viewConfigurações() {
+        initComponents();
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,14 +129,78 @@ public class viewConfigurações extends javax.swing.JFrame {
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewInicial().setVisible(true);
     }//GEN-LAST:event_btCancelarActionPerformed
 
     private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
         // TODO add your handling code here:
-        
+        if(jtConfirmarSenha.getText().toString().equals("")
+                || jtNovaSenha.getText().toString().equals("")
+                || jtSenhaAtual.getText().toString().equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+            
+        } else{
+            
+            String senha = getSenha();
+            
+            if(jtSenhaAtual.getText().toString().equals(senha)){
+                
+                if(jtNovaSenha.getText().toString().equals(jtConfirmarSenha.getText().toString())){
+                    
+                    if(jtNovaSenha.getText().toString().equals(jtSenhaAtual.getText().toString())){
+                        JOptionPane.showMessageDialog(null, "Senha antiga, informe uma nova senha!");
+                        jtConfirmarSenha.setText("");
+                        jtNovaSenha.setText("");
+                        jtSenhaAtual.setText("");
+                    } else{
+                        
+                        Senha s = new Senha(1, jtNovaSenha.getText().toString());
+                        SenhaDAO sdao = new SenhaDAO();
+                        sdao.alterar(s);
+
+                        dispose();
+                        new viewInicial().setVisible(true);
+
+                    }
+                    
+                    
+                } else{
+                    JOptionPane.showMessageDialog(null, "A confirmação de senha é diferente da nova senha!!");
+                    jtConfirmarSenha.setText("");
+                    jtNovaSenha.setText("");
+                    jtSenhaAtual.setText("");
+                }
+                
+                
+            } else{
+                JOptionPane.showMessageDialog(null, "Senha atual incorreta!");
+                jtConfirmarSenha.setText("");
+                jtNovaSenha.setText("");
+                jtSenhaAtual.setText("");
+            }
+            
+        }
     }//GEN-LAST:event_btAlterarActionPerformed
 
+    private String getSenha(){
+        
+        conecta.conexao();
+        String senha=null;
+        
+        try {
+            conecta.executaSQL("select * from usuario");
+            conecta.rs.first();
+            senha = (conecta.rs.getString("senha"));
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao recuperar senha do banco de dados!");
+        }
+        
+        return senha;
+    }
+    
     /**
      * @param args the command line arguments
      */

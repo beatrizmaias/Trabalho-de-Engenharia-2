@@ -14,6 +14,9 @@ public class viewInicial extends javax.swing.JFrame {
     /**
      * Creates new form viewSobre
      */
+    public viewInicial() {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -159,12 +162,14 @@ public class viewInicial extends javax.swing.JFrame {
 
     private void btConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfiguracoesActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewConfigurações().setVisible(true);
     }//GEN-LAST:event_btConfiguracoesActionPerformed
 
     private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
         // TODO add your handling code here:
-       
+        dispose();
+        new viewCampeonatos().setVisible(true);
 
     }//GEN-LAST:event_btCampeonatosActionPerformed
 
@@ -174,27 +179,32 @@ public class viewInicial extends javax.swing.JFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewCadastrar().setVisible(true);
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewBuscarAssociado().setVisible(true);
     }//GEN-LAST:event_btBuscarActionPerformed
 
     private void btSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSobreActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewSobre().setVisible(true);
     }//GEN-LAST:event_btSobreActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewLogin().setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void btInserirParticipanteEmEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirParticipanteEmEventoActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewCadastroAssociadoCampeonato().setVisible(true);
     }//GEN-LAST:event_btInserirParticipanteEmEventoActionPerformed
 
     /**

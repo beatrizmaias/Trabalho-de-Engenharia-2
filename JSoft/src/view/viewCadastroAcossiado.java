@@ -5,10 +5,26 @@
  */
 package view;
 
+import DAO.AssociadoDAO;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.Associado;
 
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewCadastroAcossiado extends javax.swing.JFrame {
 
@@ -16,7 +32,14 @@ public class viewCadastroAcossiado extends javax.swing.JFrame {
      * Creates new form viewCadastroAcossiado
      */
     public viewCadastroAcossiado() {
-     
+        initComponents();
+        
+        jcFaixa.removeAllItems();
+        
+        jcTipo.removeAllItems();
+        jcTipo.addItem("Aluno");
+        jcTipo.addItem("Instrutor");
+        jcTipo.addItem("Aluno/Instrutor");
         
     }
 
@@ -74,11 +97,6 @@ public class viewCadastroAcossiado extends javax.swing.JFrame {
         jLabel9.setText("kg");
 
         jcFaixa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcFaixa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcFaixaActionPerformed(evt);
-            }
-        });
 
         btCancelar.setText("Cancelar");
         btCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,15 +135,6 @@ public class viewCadastroAcossiado extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -168,7 +177,16 @@ public class viewCadastroAcossiado extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jcTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(jcTipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
                 .addGap(149, 149, 149)
@@ -224,27 +242,125 @@ public class viewCadastroAcossiado extends javax.swing.JFrame {
 
     private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        new viewInicial().setVisible(true);
     }//GEN-LAST:event_btCancelarActionPerformed
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
         
+        if(jtNome.getText().toString().equals("") ||
+                jtCpf.getText().toString().equals("") ||
+                jtIdade.getText().toString().equals("") ||
+                jtEmail.getText().toString().equals("") ||
+                jtEndereco.getText().toString().equals("") ||
+                jtTelefone.getText().toString().equals("") ||
+                jtPeso.getText().toString().equals("") ||
+                jcFaixa.getSelectedItem().toString().equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!!");
+            
+        } else{
+        
+            Associado a = new Associado(jtNome.getText().toString()
+                    , jtCpf.getText().toString()
+                    , Integer.parseInt(jtIdade.getText().toString())
+                    , jtEmail.getText().toString()
+                    , jtEndereco.getText().toString()
+                    , jtTelefone.getText().toString()
+                    , Double.parseDouble(jtPeso.getText().toString())
+                    , jcFaixa.getSelectedItem().toString());
+            
+            AssociadoDAO ad = new AssociadoDAO();
+            ad.adiciona(a);
+
+            gerarCarteirinha(a, a.getNome());
+            
+            dispose();
+            new viewInicial().setVisible(true);
+        }
         
     }//GEN-LAST:event_btCadastrarActionPerformed
+    
+    private void gerarCarteirinha(Associado a, String nome){
         
+          Document document = new Document();
+          try {
+             
+              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Carteirinha"+nome+".pdf"));
+              document.open();
+             
+              // adicionando um parágrafo no documento
+              document.add(new Paragraph("Nome: "+ a.getNome()));
+              document.add(new Paragraph("CPF: "+ a.getCpf()));
+              document.add(new Paragraph("Idade: "+ a.getIdade()));
+              document.add(new Paragraph("Email: "+ a.getEmail()));
+              document.add(new Paragraph("Endereço: "+ a.getEndereco()));
+              document.add(new Paragraph("Telefone: "+ a.getTelefone()));
+              document.add(new Paragraph("Peso: "+ a.getPeso()));
+              document.add(new Paragraph("Faixa: "+ a.getFaixa()));
+              JOptionPane.showMessageDialog(null, "Carteirinha criada com sucesso!!");
+}
+          catch(DocumentException de) {
+              System.err.println(de.getMessage());
+          }
+          catch(IOException ioe) {
+              System.err.println(ioe.getMessage());
+          }
+          document.close();    
+    }
+    private void gerarBoleto(Associado a, String nome){
+        
+          Document document = new Document();
+          try {
+             
+              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Boleto"+nome+".pdf"));
+              document.open();
+             
+              // adicionando um parágrafo no documento
+              document.add(new Paragraph("Boleto"));
+              JOptionPane.showMessageDialog(null, "Boleto criado com sucesso!!");
+}
+          catch(DocumentException de) {
+              System.err.println(de.getMessage());
+          }
+          catch(IOException ioe) {
+              System.err.println(ioe.getMessage());
+          }
+          document.close();    
+    }
+    
+    
     private void jcTipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcTipoKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcTipoKeyPressed
 
     private void jcTipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jcTipoMouseClicked
         // TODO add your handling code here:
-        
+        if(jcTipo.getSelectedItem().toString().equals("Aluno")){
+            jcFaixa.removeAllItems();
+            jcFaixa.addItem("Branco");
+            jcFaixa.addItem("Azul");
+            jcFaixa.addItem("Amarelo");
+            jcFaixa.addItem("Laranja");
+            jcFaixa.addItem("Roxo");
+            jcFaixa.addItem("Marrom");
+            jcFaixa.addItem("Preto");
+            jcFaixa.addItem("Vermelho e branco");
+            jcFaixa.addItem("Vermelho");
+        } else if(jcTipo.getSelectedItem().toString().equals("Instrutor")){
+            jcFaixa.removeAllItems();
+            jcFaixa.addItem("Preto");
+            jcFaixa.addItem("Vermelho e branco");
+            jcFaixa.addItem("Vermelho");            
+        } else{
+            jcFaixa.removeAllItems();
+            jcFaixa.addItem("Marrom");
+            jcFaixa.addItem("Preto");
+            jcFaixa.addItem("Vermelho e branco");
+            jcFaixa.addItem("Vermelho");
+        }
     }//GEN-LAST:event_jcTipoMouseClicked
-
-    private void jcFaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcFaixaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcFaixaActionPerformed
 
     /**
      * @param args the command line arguments

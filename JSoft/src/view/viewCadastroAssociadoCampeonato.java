@@ -5,10 +5,19 @@
  */
 package view;
 
+import DAO.AssociadoDAO;
+import DAO.EventoDAO;
+import DAO.EventoParticipanteDAO;
+import conexao.ConectaBanco;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import model.EventoParticipante;
 
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
@@ -16,6 +25,98 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
     /**
      * Creates new form viewCadastroAssociadoCampeonato
      */
+    public viewCadastroAssociadoCampeonato() {
+        initComponents();
+
+        ArrayList<String> eventos = new ArrayList<>();
+        ArrayList<String> associados = new ArrayList<>();
+
+        
+        jcEventos.removeAllItems();
+
+        EventoDAO edao = new EventoDAO();
+        eventos = edao.retornaTodos();
+        for(int i=0; i<eventos.size(); i++){
+            jcEventos.addItem(eventos.get(i));
+        }        
+        
+/*        
+        ArrayList<String> nomesEventos = new ArrayList<>();
+        for(int i=0; i<eventos.size(); i++){
+            nomesEventos.add(pegarNomes(Integer.parseInt(eventos.get(i))));
+        }
+        for(int i=0; i<nomesEventos.size(); i++){
+            jcEventos.addItem(nomesEventos.get(i));
+        }*/
+        
+        
+        jcAssociado.removeAllItems();
+        AssociadoDAO adao = new AssociadoDAO();
+        associados = adao.retornaTodos();
+        
+        for(int i=0; i<associados.size(); i++){
+            jcAssociado.addItem(associados.get(i));
+        }
+
+/*
+        ArrayList<String> nomesAssociados = new ArrayList<>();
+        
+        for(int i=0; i<associados.size(); i++){
+            nomesAssociados.add(pegarNomesAssociados(Integer.parseInt(associados.get(i))));
+        }
+        for(int i=0; i<nomesAssociados.size(); i++){
+            jcAssociado.addItem(nomesAssociados.get(i));
+        }*/
+        
+    }
+    
+    public String pegarNomes(int id){
+        
+        ConectaBanco c = new ConectaBanco();
+        
+        String results = "";
+        
+        String cmd = "select nome from evento where id='"+ id +"'";
+        Statement stmt;
+        ResultSet dados=null;
+        c.conexao();
+        try {
+            stmt = c.conn.prepareStatement(cmd);
+            dados = stmt.executeQuery(cmd);
+            while(dados.next()){
+                String usuario = dados.getString(1);
+                results = usuario;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }
+        
+        return results;        
+    }
+
+    public String pegarNomesAssociados(int id){
+        
+        ConectaBanco c = new ConectaBanco();
+        
+        String results = "";
+        
+        String cmd = "select nome from associado where id='"+ id +"'";
+        Statement stmt;
+        ResultSet dados=null;
+        c.conexao();
+        try {
+            stmt = c.conn.prepareStatement(cmd);
+            dados = stmt.executeQuery(cmd);
+            while(dados.next()){
+                String usuario = dados.getString(1);
+                results = usuario;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }
+        
+        return results;        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,18 +137,8 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
         setResizable(false);
 
         jcEventos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcEventos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcEventosActionPerformed(evt);
-            }
-        });
 
         jcAssociado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcAssociado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcAssociadoActionPerformed(evt);
-            }
-        });
 
         btInserirParticipante.setText("Inserir participante");
         btInserirParticipante.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +204,11 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
     private void btInserirParticipanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirParticipanteActionPerformed
         // TODO add your handling code here:
+        EventoParticipante e = new EventoParticipante(Integer.parseInt(jcEventos.getSelectedItem().toString())
+                ,Integer.parseInt(jcAssociado.getSelectedItem().toString()));
+        
+        EventoParticipanteDAO edao = new EventoParticipanteDAO();
+        edao.adiciona(e);
         
     }//GEN-LAST:event_btInserirParticipanteActionPerformed
 
@@ -121,14 +217,6 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
         dispose();
         new viewInicial().setVisible(true);
     }//GEN-LAST:event_btVoltarActionPerformed
-
-    private void jcAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcAssociadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcAssociadoActionPerformed
-
-    private void jcEventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcEventosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcEventosActionPerformed
 
     /**
      * @param args the command line arguments
