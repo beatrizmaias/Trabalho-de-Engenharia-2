@@ -17,7 +17,7 @@ import model.Associado;
 
 /**
  *
- * @
+ * @author Daniel
  */
 public class AssociadoDAO {
     
@@ -94,5 +94,29 @@ public class AssociadoDAO {
         
         return results;
     }        
+    
+    public ArrayList<String> retornaNomesAssociados(String faixa){
+        
+        ArrayList<String> results = new ArrayList<>();
+        
+        String cmd = "select nome from associado where faixa = '"+ faixa +"'";
+        Statement stmt;
+        ResultSet dados=null;
+        c.conexao();
+        try {
+            stmt = c.conn.prepareStatement(cmd);
+            dados = stmt.executeQuery(cmd);
+            while(dados.next()){
+                String usuario = dados.getString(1);
+                results.add(usuario);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }
+        
+        return results;
+        
+        
+    }
     
 }

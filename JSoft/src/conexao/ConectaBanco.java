@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 /**
  *
- * @
+ * @author Daniel 😎
  */
 public class ConectaBanco {
 
@@ -26,15 +26,15 @@ public class ConectaBanco {
     public ResultSet rs; //responsavel por armazenar o resultado de uma pesquisa passada para o statement
     private final String driver = "com.mysql.jdbc.Driver"; //responsavel por identificar o serviço de bando de dados
     private final String caminho = "jdbc:mysql://localhost:3306/jsoft"; //responsavel por setar o local do banco de dados
-    private final String usuario = "root"; //usuario do banco
-    private final String senha = "";//senha do banco
+    private final String usuario = "root"; 
+    private final String senha = "";
     public Connection conn; //responsavel por realizar a conexão com o banco de dados
     
     public void conexao(){ //metodo responsavel por realizar a conexão com o bancode dados
         try { //tentativa inicial
             System.setProperty("jdbc.Drivers", driver); //seta a propriedade do driver de conexão
             conn = DriverManager.getConnection(caminho, usuario, senha); //realiza a conexão com o banco
-//          JOptionPane.showMessageDialog(null, "Conectado com sucesso!"); //imprime uma caixa de mensagens
+//            JOptionPane.showMessageDialog(null, "Conectado com sucesso!"); //imprime uma caixa de mensagens
         } catch (SQLException ex) { //excessão
             JOptionPane.showMessageDialog(null, "Erro de conexão!\nErro:" + ex.getMessage()); 
         }
@@ -43,8 +43,8 @@ public class ConectaBanco {
     public void executaSQL(String sql){
     
         try {
-            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);//o primeiro é pq vai diferenciar letras minusculas de maiusculas, o 2 é pq vai ser rolável
-            rs = stm.executeQuery(sql);//execulta o SQL
+            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);//o primeiro é pq vi diferenciar letras minusculas de maiusculas, o 2 é pq vai ser rolável
+            rs = stm.executeQuery(sql);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro no executaSQL!\nErro:" + ex.getMessage()); 
         }

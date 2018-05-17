@@ -14,7 +14,7 @@ import model.Senha;
 
 /**
  *
- * @
+ * @author Daniel
  */
 public class SenhaDAO {
     
