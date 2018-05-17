@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @
+ * @author Daniel
  */
 public class viewInicial extends javax.swing.JFrame {
 
@@ -27,21 +27,23 @@ public class viewInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         btConfiguracoes = new javax.swing.JButton();
         btCadastrar = new javax.swing.JButton();
         btBuscar = new javax.swing.JButton();
         btCampeonatos = new javax.swing.JButton();
-        btSobre = new javax.swing.JButton();
-        btControleAssociados = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         btInserirParticipanteEmEvento = new javax.swing.JButton();
+        btControleAssociados = new javax.swing.JButton();
+        btSobre = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("JSoft");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btConfiguracoes.setText("Configurações");
         btConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +73,10 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
-        btSobre.setText("Sobre");
-        btSobre.addActionListener(new java.awt.event.ActionListener() {
+        btInserirParticipanteEmEvento.setText("Inserir participante em evento");
+        btInserirParticipanteEmEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSobreActionPerformed(evt);
+                btInserirParticipanteEmEventoActionPerformed(evt);
             }
         });
 
@@ -85,6 +87,13 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
+        btSobre.setText("Sobre");
+        btSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSobreActionPerformed(evt);
+            }
+        });
+
         jButton8.setText("Sair");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,68 +101,102 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
-        btInserirParticipanteEmEvento.setText("Inserir participante em evento");
-        btInserirParticipanteEmEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInserirParticipanteEmEventoActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("JSoft");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/LOGO.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(254, 254, 254)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addContainerGap(372, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btCampeonatos)
+                        .addGap(55, 55, 55))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btCadastrar)
+                        .addGap(73, 73, 73)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btBuscar)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btInserirParticipanteEmEvento)
+                        .addGap(35, 35, 35)
+                        .addComponent(btControleAssociados)))
+                .addGap(89, 89, 89))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(btConfiguracoes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btSobre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCadastrar)
+                    .addComponent(btBuscar))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCampeonatos)
+                    .addComponent(btInserirParticipanteEmEvento)
+                    .addComponent(btControleAssociados))
+                .addGap(51, 51, 51)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8)
+                    .addComponent(btSobre)
+                    .addComponent(btConfiguracoes))
+                .addGap(47, 47, 47))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btConfiguracoes)
-                        .addGap(61, 61, 61)
-                        .addComponent(btCadastrar)
-                        .addGap(74, 74, 74)
-                        .addComponent(btBuscar)
-                        .addGap(0, 24, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btControleAssociados)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btSobre)
-                        .addGap(86, 86, 86))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(btCampeonatos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btInserirParticipanteEmEvento)
-                .addGap(41, 41, 41))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(jButton8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(189, 189, 189))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 784, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btConfiguracoes)
-                    .addComponent(btCadastrar)
-                    .addComponent(btBuscar))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCampeonatos)
-                    .addComponent(btInserirParticipanteEmEvento))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btControleAssociados)
-                    .addComponent(btSobre))
-                .addGap(23, 23, 23)
-                .addComponent(jButton8)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,8 +205,8 @@ public class viewInicial extends javax.swing.JFrame {
 
     private void btConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfiguracoesActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new viewConfigurações().setVisible(true);
+        dispose();//fecha  tela atual
+        new viewConfigurações().setVisible(true);//abre a nova tela
     }//GEN-LAST:event_btConfiguracoesActionPerformed
 
     private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
@@ -186,7 +229,7 @@ public class viewInicial extends javax.swing.JFrame {
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
         dispose();
-        new viewBuscarAssociado().setVisible(true);
+        new viewBuscar().setVisible(true);
     }//GEN-LAST:event_btBuscarActionPerformed
 
     private void btSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSobreActionPerformed
@@ -253,5 +296,8 @@ public class viewInicial extends javax.swing.JFrame {
     private javax.swing.JButton btSobre;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
