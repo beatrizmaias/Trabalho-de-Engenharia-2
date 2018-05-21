@@ -45,35 +45,58 @@ public class viewInicial extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        btConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/setup.png"))); // NOI18N
         btConfiguracoes.setText("Configurações");
+        btConfiguracoes.setPreferredSize(new java.awt.Dimension(150, 60));
         btConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btConfiguracoesActionPerformed(evt);
             }
         });
 
+        btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.png"))); // NOI18N
         btCadastrar.setText("Cadastrar");
+        btCadastrar.setPreferredSize(new java.awt.Dimension(150, 60));
         btCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCadastrarActionPerformed(evt);
             }
         });
 
+        btBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png"))); // NOI18N
         btBuscar.setText("Buscar");
+        btBuscar.setPreferredSize(new java.awt.Dimension(150, 60));
         btBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBuscarActionPerformed(evt);
             }
         });
 
+        btCampeonatos.setBackground(new java.awt.Color(0, 51, 204));
+        btCampeonatos.setForeground(new java.awt.Color(0, 51, 204));
+        btCampeonatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/trofeu.png"))); // NOI18N
         btCampeonatos.setText("Campeonatos");
+        btCampeonatos.setAutoscrolls(true);
+        btCampeonatos.setPreferredSize(new java.awt.Dimension(150, 60));
         btCampeonatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCampeonatosActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
         btInserirParticipanteEmEvento.setText("Inserir participante em evento");
+=======
+        btInserirParticipanteEmEvento.setBackground(new java.awt.Color(255, 0, 0));
+        btInserirParticipanteEmEvento.setForeground(new java.awt.Color(153, 0, 204));
+        btInserirParticipanteEmEvento.setText("Participante em evento");
+        btInserirParticipanteEmEvento.setAutoscrolls(true);
+        btInserirParticipanteEmEvento.setOpaque(false);
+        btInserirParticipanteEmEvento.setPreferredSize(new java.awt.Dimension(150, 60));
+        btInserirParticipanteEmEvento.setRequestFocusEnabled(false);
+        btInserirParticipanteEmEvento.setRolloverEnabled(false);
+        btInserirParticipanteEmEvento.setVerifyInputWhenFocusTarget(false);
+>>>>>>> Material Design
         btInserirParticipanteEmEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btInserirParticipanteEmEventoActionPerformed(evt);
@@ -81,6 +104,7 @@ public class viewInicial extends javax.swing.JFrame {
         });
 
         btControleAssociados.setText("Controle de associados");
+        btControleAssociados.setPreferredSize(new java.awt.Dimension(150, 60));
         btControleAssociados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btControleAssociadosActionPerformed(evt);
@@ -88,6 +112,10 @@ public class viewInicial extends javax.swing.JFrame {
         });
 
         btSobre.setText("Sobre");
+<<<<<<< HEAD
+=======
+        btSobre.setPreferredSize(new java.awt.Dimension(150, 60));
+>>>>>>> Material Design
         btSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSobreActionPerformed(evt);
@@ -135,6 +163,7 @@ public class viewInicial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,11 +191,40 @@ public class viewInicial extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton8)))
                 .addGap(0, 0, Short.MAX_VALUE))
+=======
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(260, 260, 260)
+                        .addComponent(jButton8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addComponent(btBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btInserirParticipanteEmEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btSobre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btControleAssociados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btCampeonatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(181, 181, 181))
+>>>>>>> Material Design
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar)
@@ -182,6 +240,23 @@ public class viewInicial extends javax.swing.JFrame {
                     .addComponent(btSobre)
                     .addComponent(btConfiguracoes))
                 .addGap(47, 47, 47))
+=======
+                .addGap(65, 65, 65)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCampeonatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btInserirParticipanteEmEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btControleAssociados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addComponent(btSobre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jButton8)
+                .addContainerGap(30, Short.MAX_VALUE))
+>>>>>>> Material Design
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -203,34 +278,17 @@ public class viewInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfiguracoesActionPerformed
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         dispose();//fecha  tela atual
         new viewConfigurações().setVisible(true);//abre a nova tela
     }//GEN-LAST:event_btConfiguracoesActionPerformed
-
-    private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
-        // TODO add your handling code here:
+=======
         dispose();
-        new viewCampeonatos().setVisible(true);
-
-    }//GEN-LAST:event_btCampeonatosActionPerformed
-
-    private void btControleAssociadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btControleAssociadosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btControleAssociadosActionPerformed
-
-    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewCadastrar().setVisible(true);
-    }//GEN-LAST:event_btCadastrarActionPerformed
-
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewBuscar().setVisible(true);
-    }//GEN-LAST:event_btBuscarActionPerformed
+        new viewLogin().setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
+>>>>>>> Material Design
 
     private void btSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSobreActionPerformed
         // TODO add your handling code here:
@@ -238,17 +296,44 @@ public class viewInicial extends javax.swing.JFrame {
         new viewSobre().setVisible(true);
     }//GEN-LAST:event_btSobreActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btControleAssociadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btControleAssociadosActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new viewLogin().setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btControleAssociadosActionPerformed
 
     private void btInserirParticipanteEmEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirParticipanteEmEventoActionPerformed
         // TODO add your handling code here:
         dispose();
         new viewCadastroAssociadoCampeonato().setVisible(true);
     }//GEN-LAST:event_btInserirParticipanteEmEventoActionPerformed
+
+    private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
+        // TODO add your handling code here:
+        dispose();
+<<<<<<< HEAD
+        new viewBuscar().setVisible(true);
+    }//GEN-LAST:event_btBuscarActionPerformed
+=======
+        new viewCampeonatos().setVisible(true);
+    }//GEN-LAST:event_btCampeonatosActionPerformed
+>>>>>>> Material Design
+
+    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new viewBuscar().setVisible(true);
+    }//GEN-LAST:event_btBuscarActionPerformed
+
+    private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new viewCadastrar().setVisible(true);
+    }//GEN-LAST:event_btCadastrarActionPerformed
+
+    private void btConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConfiguracoesActionPerformed
+        // TODO add your handling code here:
+        dispose();//fecha  tela atual
+        new viewConfigurações().setVisible(true);//abre a nova tela
+    }//GEN-LAST:event_btConfiguracoesActionPerformed
 
     /**
      * @param args the command line arguments

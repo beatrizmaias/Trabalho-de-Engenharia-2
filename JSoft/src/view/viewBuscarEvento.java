@@ -47,11 +47,14 @@ public class viewBuscarEvento extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+<<<<<<< HEAD
         btMostrarTodos = new javax.swing.JButton();
         btBuscar = new javax.swing.JButton();
         jcOpcoesBusca = new javax.swing.JComboBox<>();
         jtBuscaId = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+=======
+>>>>>>> Material Design
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
@@ -60,14 +63,33 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         jtData = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jtFaixa = new javax.swing.JTextField();
+<<<<<<< HEAD
         btVoltar = new javax.swing.JButton();
+=======
+>>>>>>> Material Design
         btExcluir = new javax.swing.JButton();
         btAlterar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+<<<<<<< HEAD
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(747, 700));
+=======
+        jPanel3 = new javax.swing.JPanel();
+        btMostrarTodos = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jtBuscaId = new javax.swing.JTextField();
+        jcOpcoesBusca = new javax.swing.JComboBox<>();
+        btBuscar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(747, 700));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+>>>>>>> Material Design
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -77,6 +99,7 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                 btMostrarTodosActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
 
         btBuscar.setText("Buscar");
         btBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,14 +107,24 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                 btBuscarActionPerformed(evt);
             }
         });
+=======
+        jScrollPane1.setViewportView(Tabela);
 
-        jcOpcoesBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jcOpcoesBusca.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("Nome:");
+
+        jLabel9.setText("Data");
+>>>>>>> Material Design
+
+        jLabel7.setText("Faixa:");
+
+        btExcluir.setText("Excluir");
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcOpcoesBuscaActionPerformed(evt);
+                btExcluirActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
         jtBuscaId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtBuscaIdActionPerformed(evt);
@@ -125,14 +158,50 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         jLabel9.setText("Data");
 
         jLabel7.setText("Faixa:");
-
-        btVoltar.setText("Voltar");
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+=======
+        btAlterar.setText("Alterar");
+        btAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
+                btAlterarActionPerformed(evt);
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
+        jPanel2.setForeground(new java.awt.Color(0, 102, 255));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Buscar");
+        jLabel2.setFocusable(false);
+
+        jPanel3.setBackground(new java.awt.Color(0, 19, 146));
+
+        btMostrarTodos.setText("Mostra Todos");
+        btMostrarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMostrarTodosActionPerformed(evt);
+            }
+        });
+
+        jPanel4.setBackground(new java.awt.Color(0, 51, 153));
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Buscar:");
+>>>>>>> Material Design
+
+        jtBuscaId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtBuscaIdActionPerformed(evt);
+            }
+        });
+        jtBuscaId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtBuscaIdKeyPressed(evt);
+            }
+        });
+
+<<<<<<< HEAD
         btExcluir.setText("Excluir");
         btExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,11 +211,16 @@ public class viewBuscarEvento extends javax.swing.JFrame {
 
         btAlterar.setText("Alterar");
         btAlterar.addActionListener(new java.awt.event.ActionListener() {
+=======
+        jcOpcoesBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcOpcoesBusca.addActionListener(new java.awt.event.ActionListener() {
+>>>>>>> Material Design
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAlterarActionPerformed(evt);
+                jcOpcoesBuscaActionPerformed(evt);
             }
         });
 
+<<<<<<< HEAD
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
         jPanel2.setForeground(new java.awt.Color(0, 102, 255));
 
@@ -228,14 +302,149 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+=======
+        btBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        btBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search-small.png"))); // NOI18N
+        btBuscar.setText("Buscar");
+        btBuscar.setContentAreaFilled(false);
+        btBuscar.setOpaque(false);
+        btBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBuscarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtBuscaId, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jcOpcoesBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btBuscar)
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+>>>>>>> Material Design
                     .addComponent(jLabel1)
-                    .addComponent(btMostrarTodos)
                     .addComponent(jtBuscaId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jcOpcoesBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btBuscar))
+<<<<<<< HEAD
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
+=======
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(btMostrarTodos)
+                .addGap(71, 71, 71))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btMostrarTodos)
+                .addGap(37, 37, 37))
+        );
+
+        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/back.png"))); // NOI18N
+        btVoltar.setContentAreaFilled(false);
+        btVoltar.setFocusable(false);
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(btVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 56, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jtData, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jtFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(225, 225, 225)
+                                .addComponent(btAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btExcluir)))
+                        .addGap(41, 41, 41))))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+>>>>>>> Material Design
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
@@ -247,10 +456,16 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                         .addComponent(jtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
                     .addComponent(btVoltar)
                     .addComponent(btAlterar)
                     .addComponent(btExcluir))
                 .addGap(47, 47, 47))
+=======
+                    .addComponent(btAlterar)
+                    .addComponent(btExcluir))
+                .addGap(43, 43, 43))
+>>>>>>> Material Design
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -265,12 +480,78 @@ public class viewBuscarEvento extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(24, Short.MAX_VALUE))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> Material Design
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
+        // TODO add your handling code here:
+        preencherTabela("select * from evento where " + (String)jcOpcoesBusca.getSelectedItem() + " like '%"+jtBuscaId.getText()+"%'");
+    }//GEN-LAST:event_btBuscarActionPerformed
+
+    private void jcOpcoesBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcOpcoesBuscaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcOpcoesBuscaActionPerformed
+
+    private void jtBuscaIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBuscaIdKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtBuscaIdKeyPressed
+
+    private void jtBuscaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtBuscaIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtBuscaIdActionPerformed
+
+    private void btMostrarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMostrarTodosActionPerformed
+        // TODO add your handling code here:
+        conecta.conexao();
+        preencherTabela("select * from evento order by id");
+        int selRow = Tabela.getSelectedRow();
+    }//GEN-LAST:event_btMostrarTodosActionPerformed
+
+    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
+        // TODO add your handling code here:
+        Evento e = new Evento(id, jtNome.getText(), jtData.getText(), jtFaixa.getText());
+        EventoDAO edao = new EventoDAO();
+        edao.alterar(e);
+        preencherTabela("select * from evento order by id");
+
+        dispose();
+        new viewBuscarEvento().setVisible(true);
+    }//GEN-LAST:event_btAlterarActionPerformed
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        // TODO add your handling code here:
+        Evento e = new Evento(id);
+        EventoDAO edao = new EventoDAO();
+        edao.excluir(e);
+        preencherTabela("select * from evento order by id");
+
+        dispose();
+        new viewBuscarEvento().setVisible(true);
+    }//GEN-LAST:event_btExcluirActionPerformed
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new viewInicial().setVisible(true);
+    }//GEN-LAST:event_btVoltarActionPerformed
+
+    private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
+        // TODO add your handling code here:
+
+        int indiceLinha = Tabela.getSelectedRow();
+        id = Integer.parseInt(Tabela.getValueAt(indiceLinha, 0).toString());
+        jtNome.setText(Tabela.getValueAt(indiceLinha, 1).toString());
+        jtData.setText(Tabela.getValueAt(indiceLinha, 2).toString());
+        jtFaixa.setText(Tabela.getValueAt(indiceLinha, 3).toString());
+    }//GEN-LAST:event_TabelaMouseClicked
 
     
     public void preencherTabela(String sql){
@@ -310,68 +591,6 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         Tabela.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
     }    
-    private void jtBuscaIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtBuscaIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtBuscaIdActionPerformed
-
-    private void jcOpcoesBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcOpcoesBuscaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcOpcoesBuscaActionPerformed
-
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-        // TODO add your handling code here:
-        preencherTabela("select * from evento where " + (String)jcOpcoesBusca.getSelectedItem() + " like '%"+jtBuscaId.getText()+"%'");
-    }//GEN-LAST:event_btBuscarActionPerformed
-
-    private void btMostrarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMostrarTodosActionPerformed
-        // TODO add your handling code here:
-        conecta.conexao();
-        preencherTabela("select * from evento order by id");
-        int selRow = Tabela.getSelectedRow();
-    }//GEN-LAST:event_btMostrarTodosActionPerformed
-
-    private void jtBuscaIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtBuscaIdKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtBuscaIdKeyPressed
-
-    private void TabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaMouseClicked
-        // TODO add your handling code here:
-        
-        int indiceLinha = Tabela.getSelectedRow();
-        id = Integer.parseInt(Tabela.getValueAt(indiceLinha, 0).toString());
-        jtNome.setText(Tabela.getValueAt(indiceLinha, 1).toString());
-        jtData.setText(Tabela.getValueAt(indiceLinha, 2).toString());
-        jtFaixa.setText(Tabela.getValueAt(indiceLinha, 3).toString());
-    }//GEN-LAST:event_TabelaMouseClicked
-
-    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        // TODO add your handling code here:
-        Evento e = new Evento(id);
-        EventoDAO edao = new EventoDAO();
-        edao.excluir(e);
-        preencherTabela("select * from evento order by id");
-        
-        dispose();
-        new viewBuscarEvento().setVisible(true);
-    }//GEN-LAST:event_btExcluirActionPerformed
-
-    private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
-        // TODO add your handling code here:
-        Evento e = new Evento(id, jtNome.getText(), jtData.getText(), jtFaixa.getText());
-        EventoDAO edao = new EventoDAO();
-        edao.alterar(e);
-        preencherTabela("select * from evento order by id");
-
-        dispose();
-        new viewBuscarEvento().setVisible(true);
-    }//GEN-LAST:event_btAlterarActionPerformed
-
-    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewInicial().setVisible(true);
-    }//GEN-LAST:event_btVoltarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -424,6 +643,11 @@ public class viewBuscarEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+<<<<<<< HEAD
+=======
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+>>>>>>> Material Design
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jcOpcoesBusca;
     private javax.swing.JTextField jtBuscaId;

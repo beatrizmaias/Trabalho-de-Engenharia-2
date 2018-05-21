@@ -128,7 +128,7 @@ public class viewCampeonatos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabela);
 
-        btVoltar.setText("Voltar");
+        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/back.png"))); // NOI18N
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btVoltarActionPerformed(evt);
@@ -171,7 +171,11 @@ public class viewCampeonatos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btVoltar)
                     .addComponent(btSortear))
+<<<<<<< HEAD
                 .addContainerGap(28, Short.MAX_VALUE))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> Material Design
         );
 
         pack();

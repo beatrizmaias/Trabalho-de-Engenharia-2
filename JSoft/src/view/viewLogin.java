@@ -33,7 +33,11 @@ public class viewLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+<<<<<<< HEAD
         jPanel2 = new javax.swing.JPanel();
+=======
+        areaDeAcesso = new javax.swing.JPanel();
+>>>>>>> Material Design
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -47,7 +51,11 @@ public class viewLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+<<<<<<< HEAD
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
+=======
+        areaDeAcesso.setBackground(new java.awt.Color(0, 102, 204));
+>>>>>>> Material Design
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
 
@@ -55,6 +63,7 @@ public class viewLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Area de acesso");
 
+<<<<<<< HEAD
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -64,13 +73,30 @@ public class viewLogin extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(241, 241, 241))
             .addGroup(jPanel2Layout.createSequentialGroup()
+=======
+        javax.swing.GroupLayout areaDeAcessoLayout = new javax.swing.GroupLayout(areaDeAcesso);
+        areaDeAcesso.setLayout(areaDeAcessoLayout);
+        areaDeAcessoLayout.setHorizontalGroup(
+            areaDeAcessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(areaDeAcessoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(241, 241, 241))
+            .addGroup(areaDeAcessoLayout.createSequentialGroup()
+>>>>>>> Material Design
                 .addGap(290, 290, 290)
                 .addComponent(jLabel3)
                 .addContainerGap(312, Short.MAX_VALUE))
         );
+<<<<<<< HEAD
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+=======
+        areaDeAcessoLayout.setVerticalGroup(
+            areaDeAcessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, areaDeAcessoLayout.createSequentialGroup()
+>>>>>>> Material Design
                 .addGap(25, 25, 25)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -89,8 +115,17 @@ public class viewLogin extends javax.swing.JFrame {
         });
 
         btEntrar.setBackground(new java.awt.Color(0, 102, 255));
+<<<<<<< HEAD
         btEntrar.setForeground(new java.awt.Color(0, 102, 255));
+=======
+        btEntrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btEntrar.setForeground(new java.awt.Color(255, 255, 255));
+>>>>>>> Material Design
         btEntrar.setText("Entrar");
+        btEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btEntrar.setContentAreaFilled(false);
+        btEntrar.setOpaque(true);
+        btEntrar.setPreferredSize(new java.awt.Dimension(50, 22));
         btEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEntrarActionPerformed(evt);
@@ -104,7 +139,11 @@ public class viewLogin extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(areaDeAcesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> Material Design
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
@@ -124,7 +163,11 @@ public class viewLogin extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+=======
+                .addComponent(areaDeAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> Material Design
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -133,9 +176,15 @@ public class viewLogin extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
                     .addComponent(btEntrar)
                     .addComponent(btCancelar))
                 .addContainerGap(125, Short.MAX_VALUE))
+=======
+                    .addComponent(btEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btCancelar))
+                .addGap(43, 43, 43))
+>>>>>>> Material Design
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,6 +274,7 @@ public class viewLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel areaDeAcesso;
     private javax.swing.JButton btCancelar;
     private javax.swing.JButton btEntrar;
     private javax.swing.JLabel jLabel1;
@@ -232,7 +282,10 @@ public class viewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel2;
+=======
+>>>>>>> Material Design
     private javax.swing.JPasswordField jtSenha;
     // End of variables declaration//GEN-END:variables
 }
