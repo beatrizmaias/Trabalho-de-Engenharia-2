@@ -287,11 +287,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
           Document document = new Document();
           try {
              
-<<<<<<< HEAD
-              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Carteirinha"+nome+".pdf"));
-=======
               PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Daniel\\Desktop\\Nova pasta\\Carteirinha"+nome+".pdf"));
->>>>>>> Material Design
               document.open();
              
               // adicionando um parágrafo no documento
@@ -318,11 +314,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
           Document document = new Document();
           try {
              
-<<<<<<< HEAD
-              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Boleto"+nome+".pdf"));
-=======
               PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Daniel\\Desktop\\Nova pasta\\Boleto"+nome+".pdf"));
->>>>>>> Material Design
               document.open();
              
               // adicionando um parágrafo no documento

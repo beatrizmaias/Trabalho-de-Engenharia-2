@@ -29,19 +29,12 @@ public class viewCadastrar extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-<<<<<<< HEAD
-        jLabel1 = new javax.swing.JLabel();
-        btVoltar = new javax.swing.JButton();
-        btCadastrarCampeonato = new javax.swing.JButton();
-        btCadastrarAssociado = new javax.swing.JButton();
-=======
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btVoltar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btCadastrarAssociado = new javax.swing.JButton();
         btCadastrarCampeonato = new javax.swing.JButton();
->>>>>>> Material Design
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -49,46 +42,6 @@ public class viewCadastrar extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
-<<<<<<< HEAD
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Escolha a opção de cadastro");
-
-        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/back.png"))); // NOI18N
-        btVoltar.setText("Voltar");
-        btVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btVoltarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(btVoltar)
-                .addGap(90, 90, 90)
-                .addComponent(jLabel1)
-                .addContainerGap(278, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(btVoltar))
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-
-        btCadastrarCampeonato.setText("Campeonato");
-        btCadastrarCampeonato.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        btCadastrarCampeonato.addActionListener(new java.awt.event.ActionListener() {
-=======
         jPanel2.setPreferredSize(new java.awt.Dimension(811, 226));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -103,7 +56,6 @@ public class viewCadastrar extends javax.swing.JFrame {
         btVoltar.setContentAreaFilled(false);
         btVoltar.setFocusable(false);
         btVoltar.addActionListener(new java.awt.event.ActionListener() {
->>>>>>> Material Design
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btVoltarActionPerformed(evt);
             }
@@ -149,32 +101,6 @@ public class viewCadastrar extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(btCadastrarCampeonato)
-                .addGap(61, 61, 61)
-                .addComponent(btCadastrarAssociado)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(89, 89, 89)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCadastrarCampeonato)
-                    .addComponent(btCadastrarAssociado))
-                .addGap(117, 117, 117))
-        );
-=======
         btCadastrarCampeonato.setForeground(new java.awt.Color(255, 255, 255));
         btCadastrarCampeonato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/trofeu.png"))); // NOI18N
         btCadastrarCampeonato.setText("Campeonato");
@@ -186,7 +112,6 @@ public class viewCadastrar extends javax.swing.JFrame {
                 btCadastrarCampeonatoActionPerformed(evt);
             }
         });
->>>>>>> Material Design
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -302,16 +227,10 @@ public class viewCadastrar extends javax.swing.JFrame {
     private javax.swing.JButton btCadastrarAssociado;
     private javax.swing.JButton btCadastrarCampeonato;
     private javax.swing.JButton btVoltar;
-<<<<<<< HEAD
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-=======
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
->>>>>>> Material Design
     // End of variables declaration//GEN-END:variables
 }

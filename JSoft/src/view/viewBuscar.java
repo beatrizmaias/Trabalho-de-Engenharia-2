@@ -27,14 +27,8 @@ public class viewBuscar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
-        jPanel2 = new javax.swing.JPanel();
-        btBuscarAssociado = new javax.swing.JButton();
-        btBuscarCampeonato = new javax.swing.JButton();
-=======
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
->>>>>>> Material Design
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,18 +47,6 @@ public class viewBuscar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-<<<<<<< HEAD
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        btBuscarAssociado.setText("Associado");
-        btBuscarAssociado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarAssociadoActionPerformed(evt);
-            }
-        });
-
-        btBuscarCampeonato.setText("Campeonato");
-=======
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -118,32 +100,12 @@ public class viewBuscar extends javax.swing.JFrame {
         btBuscarCampeonato.setText("Campeonato");
         btBuscarCampeonato.setBorder(null);
         btBuscarCampeonato.setContentAreaFilled(false);
->>>>>>> Material Design
         btBuscarCampeonato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBuscarCampeonatoActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Escolha o que deseja buscar");
-
-        btVoltar.setBackground(new java.awt.Color(0, 102, 255));
-        btVoltar.setForeground(new java.awt.Color(0, 102, 255));
-        btVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/back.png"))); // NOI18N
-        btVoltar.setText("Voltar");
-        btVoltar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        btVoltar.setBorderPainted(false);
-        btVoltar.setFocusPainted(false);
-        btVoltar.setFocusable(false);
-        btVoltar.setRequestFocusEnabled(false);
-        btVoltar.setRolloverEnabled(false);
-        btVoltar.addActionListener(new java.awt.event.ActionListener() {
-=======
         btBuscarAssociado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btBuscarAssociado.setForeground(new java.awt.Color(255, 255, 255));
         btBuscarAssociado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
@@ -151,33 +113,11 @@ public class viewBuscar extends javax.swing.JFrame {
         btBuscarAssociado.setContentAreaFilled(false);
         btBuscarAssociado.setFocusable(false);
         btBuscarAssociado.addActionListener(new java.awt.event.ActionListener() {
->>>>>>> Material Design
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBuscarAssociadoActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(btVoltar)
-                .addGap(127, 127, 127)
-                .addComponent(jLabel1)
-                .addContainerGap(128, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(82, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btVoltar)
-                    .addComponent(jLabel1))
-                .addGap(59, 59, 59))
-=======
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -197,45 +137,22 @@ public class viewBuscar extends javax.swing.JFrame {
                     .addComponent(btBuscarCampeonato, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btBuscarAssociado))
                 .addGap(96, 96, 96))
->>>>>>> Material Design
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(btBuscarCampeonato)
-                        .addGap(111, 111, 111)
-                        .addComponent(btBuscarAssociado))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> Material Design
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addGap(52, 52, 52)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btBuscarCampeonato)
-                    .addComponent(btBuscarAssociado))
-                .addContainerGap(117, Short.MAX_VALUE))
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> Material Design
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -243,13 +160,8 @@ public class viewBuscar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
->>>>>>> Material Design
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,19 +172,6 @@ public class viewBuscar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-    private void btBuscarCampeonatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarCampeonatoActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewBuscarEvento().setVisible(true);
-    }//GEN-LAST:event_btBuscarCampeonatoActionPerformed
-
-    private void btBuscarAssociadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarAssociadoActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewBuscarAssociado().setVisible(true);
-    }//GEN-LAST:event_btBuscarAssociadoActionPerformed
-=======
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         dispose();
         new viewInicial().setVisible(true);
@@ -289,7 +188,6 @@ public class viewBuscar extends javax.swing.JFrame {
         dispose();
         new viewBuscarEvento().setVisible(true);
     }//GEN-LAST:event_btBuscarCampeonatoActionPerformed
->>>>>>> Material Design
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         dispose();
@@ -335,12 +233,6 @@ public class viewBuscar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBuscarAssociado;
     private javax.swing.JButton btBuscarCampeonato;
-<<<<<<< HEAD
-    private javax.swing.JButton btVoltar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-=======
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -348,6 +240,5 @@ public class viewBuscar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
->>>>>>> Material Design
     // End of variables declaration//GEN-END:variables
 }

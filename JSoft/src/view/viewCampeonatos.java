@@ -171,11 +171,7 @@ public class viewCampeonatos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btVoltar)
                     .addComponent(btSortear))
-<<<<<<< HEAD
-                .addContainerGap(28, Short.MAX_VALUE))
-=======
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> Material Design
         );
 
         pack();

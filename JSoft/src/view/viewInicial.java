@@ -84,9 +84,6 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-        btInserirParticipanteEmEvento.setText("Inserir participante em evento");
-=======
         btInserirParticipanteEmEvento.setBackground(new java.awt.Color(255, 0, 0));
         btInserirParticipanteEmEvento.setForeground(new java.awt.Color(153, 0, 204));
         btInserirParticipanteEmEvento.setText("Participante em evento");
@@ -96,7 +93,6 @@ public class viewInicial extends javax.swing.JFrame {
         btInserirParticipanteEmEvento.setRequestFocusEnabled(false);
         btInserirParticipanteEmEvento.setRolloverEnabled(false);
         btInserirParticipanteEmEvento.setVerifyInputWhenFocusTarget(false);
->>>>>>> Material Design
         btInserirParticipanteEmEvento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btInserirParticipanteEmEventoActionPerformed(evt);
@@ -112,10 +108,7 @@ public class viewInicial extends javax.swing.JFrame {
         });
 
         btSobre.setText("Sobre");
-<<<<<<< HEAD
-=======
         btSobre.setPreferredSize(new java.awt.Dimension(150, 60));
->>>>>>> Material Design
         btSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btSobreActionPerformed(evt);
@@ -163,35 +156,6 @@ public class viewInicial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btCampeonatos)
-                        .addGap(55, 55, 55))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btCadastrar)
-                        .addGap(73, 73, 73)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btBuscar)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btInserirParticipanteEmEvento)
-                        .addGap(35, 35, 35)
-                        .addComponent(btControleAssociados)))
-                .addGap(89, 89, 89))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(btConfiguracoes)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btSobre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)))
-                .addGap(0, 0, Short.MAX_VALUE))
-=======
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -218,29 +182,11 @@ public class viewInicial extends javax.swing.JFrame {
                             .addComponent(btConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btCampeonatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(181, 181, 181))
->>>>>>> Material Design
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCadastrar)
-                    .addComponent(btBuscar))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btCampeonatos)
-                    .addComponent(btInserirParticipanteEmEvento)
-                    .addComponent(btControleAssociados))
-                .addGap(51, 51, 51)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(btSobre)
-                    .addComponent(btConfiguracoes))
-                .addGap(47, 47, 47))
-=======
                 .addGap(65, 65, 65)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -256,7 +202,6 @@ public class viewInicial extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jButton8)
                 .addContainerGap(30, Short.MAX_VALUE))
->>>>>>> Material Design
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -280,15 +225,9 @@ public class viewInicial extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-        dispose();//fecha  tela atual
-        new viewConfigurações().setVisible(true);//abre a nova tela
-    }//GEN-LAST:event_btConfiguracoesActionPerformed
-=======
         dispose();
         new viewLogin().setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
->>>>>>> Material Design
 
     private void btSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSobreActionPerformed
         // TODO add your handling code here:
@@ -309,13 +248,8 @@ public class viewInicial extends javax.swing.JFrame {
     private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
         // TODO add your handling code here:
         dispose();
-<<<<<<< HEAD
-        new viewBuscar().setVisible(true);
-    }//GEN-LAST:event_btBuscarActionPerformed
-=======
         new viewCampeonatos().setVisible(true);
     }//GEN-LAST:event_btCampeonatosActionPerformed
->>>>>>> Material Design
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
