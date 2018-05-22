@@ -80,8 +80,16 @@ public class viewLogin extends javax.swing.JFrame {
 
         jLabel1.setText("Senha:");
 
-        btCancelar.setBackground(new java.awt.Color(204, 204, 204));
-        btCancelar.setText("Cancelar");
+        btCancelar.setBackground(new java.awt.Color(255, 51, 0));
+        btCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btCancelar.setText("Sair do Sistema");
+        btCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btCancelar.setContentAreaFilled(false);
+        btCancelar.setMaximumSize(new java.awt.Dimension(51, 23));
+        btCancelar.setMinimumSize(new java.awt.Dimension(51, 23));
+        btCancelar.setOpaque(true);
+        btCancelar.setPreferredSize(new java.awt.Dimension(113, 23));
         btCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btCancelarActionPerformed(evt);
@@ -112,14 +120,15 @@ public class viewLogin extends javax.swing.JFrame {
             .addComponent(areaDeAcesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btCancelar)
-                        .addGap(52, 52, 52)
-                        .addComponent(btEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1)
+                        .addGap(51, 51, 51)
+                        .addComponent(jtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -139,7 +148,7 @@ public class viewLogin extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btCancelar))
+                    .addComponent(btCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43))
         );
 
