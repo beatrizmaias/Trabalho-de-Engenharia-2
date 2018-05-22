@@ -17,7 +17,7 @@ import model.ModeloTabela;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewBuscarAssociado extends javax.swing.JFrame {
 

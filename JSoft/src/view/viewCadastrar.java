@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewCadastrar extends javax.swing.JFrame {
 

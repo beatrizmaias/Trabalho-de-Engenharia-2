@@ -12,7 +12,7 @@ import model.Senha;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewConfigurações extends javax.swing.JFrame {
     

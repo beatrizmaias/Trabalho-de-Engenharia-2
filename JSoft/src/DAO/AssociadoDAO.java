@@ -17,7 +17,7 @@ import model.Associado;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class AssociadoDAO {
     

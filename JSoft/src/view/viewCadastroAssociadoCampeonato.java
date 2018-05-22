@@ -17,7 +17,7 @@ import model.EventoParticipante;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 

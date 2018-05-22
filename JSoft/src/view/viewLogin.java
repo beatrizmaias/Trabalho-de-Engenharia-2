@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewLogin extends javax.swing.JFrame {
 

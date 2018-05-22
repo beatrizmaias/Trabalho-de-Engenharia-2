@@ -11,7 +11,7 @@ import model.Evento;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewCadastrarEvento extends javax.swing.JFrame {
 

@@ -21,7 +21,7 @@ import model.Evento;
 
 /**
  *
- * @author Daniel
+ * @author
  */
 public class EventoDAO {
     

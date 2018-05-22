@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class Associado {
     

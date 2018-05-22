@@ -19,7 +19,7 @@ import model.ModeloTabela;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewCampeonatos extends javax.swing.JFrame {
 

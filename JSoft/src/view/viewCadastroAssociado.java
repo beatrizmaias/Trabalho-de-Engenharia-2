@@ -24,7 +24,7 @@ import model.Associado;
 
 /**
  *
- * @author Daniel
+ * @author 
  */
 public class viewCadastroAssociado extends javax.swing.JFrame {
 
@@ -287,7 +287,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
           Document document = new Document();
           try {
              
-              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Daniel\\Desktop\\Nova pasta\\Carteirinha"+nome+".pdf"));
+              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Carteirinha"+nome+".pdf"));
               document.open();
              
               // adicionando um parágrafo no documento
@@ -307,14 +307,14 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
           catch(IOException ioe) {
               System.err.println(ioe.getMessage());
           }
-          document.close();    
+          document.close();   
     }
     private void gerarBoleto(Associado a, String nome){
         
           Document document = new Document();
           try {
              
-              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Daniel\\Desktop\\Nova pasta\\Boleto"+nome+".pdf"));
+              PdfWriter.getInstance(document, new FileOutputStream("C:\\Users\\Laécio Rodrigues\\Desktop\\Nova pasta\\Boleto"+nome+".pdf"));
               document.open();
              
               // adicionando um parágrafo no documento
@@ -327,7 +327,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
           catch(IOException ioe) {
               System.err.println(ioe.getMessage());
           }
-          document.close();    
+          document.close();   
     }
     
     
