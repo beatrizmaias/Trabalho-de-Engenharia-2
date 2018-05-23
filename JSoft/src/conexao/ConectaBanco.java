@@ -27,7 +27,7 @@ public class ConectaBanco {
     private final String driver = "com.mysql.jdbc.Driver"; //responsavel por identificar o serviço de bando de dados
     private final String caminho = "jdbc:mysql://localhost:3306/jsoft"; //responsavel por setar o local do banco de dados
     private final String usuario = "root"; 
-    private final String senha = "";
+    private final String senha = "bosta";
     public Connection conn; //responsavel por realizar a conexão com o banco de dados
     
     public void conexao(){ //metodo responsavel por realizar a conexão com o bancode dados
