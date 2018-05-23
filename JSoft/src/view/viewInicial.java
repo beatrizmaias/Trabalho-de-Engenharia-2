@@ -32,21 +32,25 @@ public class viewInicial extends javax.swing.JFrame {
         btCadastrar = new javax.swing.JButton();
         btBuscar = new javax.swing.JButton();
         btCampeonatos = new javax.swing.JButton();
-        btInserirParticipanteEmEvento = new javax.swing.JButton();
         btControleAssociados = new javax.swing.JButton();
         btSobre = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btInserirParticipanteEmEventoActionPerformed = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        btConfiguracoes.setBackground(new java.awt.Color(0, 51, 102));
+        btConfiguracoes.setForeground(new java.awt.Color(255, 255, 255));
         btConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/setup.png"))); // NOI18N
         btConfiguracoes.setText("Configurações");
+        btConfiguracoes.setContentAreaFilled(false);
+        btConfiguracoes.setOpaque(true);
         btConfiguracoes.setPreferredSize(new java.awt.Dimension(150, 60));
         btConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,8 +58,12 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
+        btCadastrar.setBackground(new java.awt.Color(0, 51, 102));
+        btCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/add.png"))); // NOI18N
         btCadastrar.setText("Cadastrar");
+        btCadastrar.setContentAreaFilled(false);
+        btCadastrar.setOpaque(true);
         btCadastrar.setPreferredSize(new java.awt.Dimension(150, 60));
         btCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,8 +71,12 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
+        btBuscar.setBackground(new java.awt.Color(0, 51, 102));
+        btBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/search.png"))); // NOI18N
         btBuscar.setText("Buscar");
+        btBuscar.setContentAreaFilled(false);
+        btBuscar.setOpaque(true);
         btBuscar.setPreferredSize(new java.awt.Dimension(150, 60));
         btBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,11 +84,13 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
-        btCampeonatos.setBackground(new java.awt.Color(0, 51, 204));
-        btCampeonatos.setForeground(new java.awt.Color(0, 51, 204));
+        btCampeonatos.setBackground(new java.awt.Color(0, 51, 102));
+        btCampeonatos.setForeground(new java.awt.Color(255, 255, 255));
         btCampeonatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/trofeu.png"))); // NOI18N
         btCampeonatos.setText("Campeonatos");
         btCampeonatos.setAutoscrolls(true);
+        btCampeonatos.setContentAreaFilled(false);
+        btCampeonatos.setOpaque(true);
         btCampeonatos.setPreferredSize(new java.awt.Dimension(150, 60));
         btCampeonatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,22 +98,11 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
-        btInserirParticipanteEmEvento.setBackground(new java.awt.Color(255, 0, 0));
-        btInserirParticipanteEmEvento.setForeground(new java.awt.Color(153, 0, 204));
-        btInserirParticipanteEmEvento.setText("Participante em evento");
-        btInserirParticipanteEmEvento.setAutoscrolls(true);
-        btInserirParticipanteEmEvento.setOpaque(false);
-        btInserirParticipanteEmEvento.setPreferredSize(new java.awt.Dimension(150, 60));
-        btInserirParticipanteEmEvento.setRequestFocusEnabled(false);
-        btInserirParticipanteEmEvento.setRolloverEnabled(false);
-        btInserirParticipanteEmEvento.setVerifyInputWhenFocusTarget(false);
-        btInserirParticipanteEmEvento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInserirParticipanteEmEventoActionPerformed(evt);
-            }
-        });
-
+        btControleAssociados.setBackground(new java.awt.Color(0, 51, 102));
+        btControleAssociados.setForeground(new java.awt.Color(255, 255, 255));
         btControleAssociados.setText("Controle de associados");
+        btControleAssociados.setContentAreaFilled(false);
+        btControleAssociados.setOpaque(true);
         btControleAssociados.setPreferredSize(new java.awt.Dimension(150, 60));
         btControleAssociados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +110,11 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
+        btSobre.setBackground(new java.awt.Color(0, 51, 102));
+        btSobre.setForeground(new java.awt.Color(255, 255, 255));
         btSobre.setText("Sobre");
+        btSobre.setContentAreaFilled(false);
+        btSobre.setOpaque(true);
         btSobre.setPreferredSize(new java.awt.Dimension(150, 60));
         btSobre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,7 +122,11 @@ public class viewInicial extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setBackground(new java.awt.Color(255, 0, 0));
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Sair");
+        jButton8.setContentAreaFilled(false);
+        jButton8.setOpaque(true);
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -152,6 +163,18 @@ public class viewInicial extends javax.swing.JFrame {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
+        btInserirParticipanteEmEventoActionPerformed.setBackground(new java.awt.Color(0, 51, 102));
+        btInserirParticipanteEmEventoActionPerformed.setForeground(new java.awt.Color(255, 255, 255));
+        btInserirParticipanteEmEventoActionPerformed.setText("Participante em evento");
+        btInserirParticipanteEmEventoActionPerformed.setContentAreaFilled(false);
+        btInserirParticipanteEmEventoActionPerformed.setOpaque(true);
+        btInserirParticipanteEmEventoActionPerformed.setPreferredSize(new java.awt.Dimension(150, 60));
+        btInserirParticipanteEmEventoActionPerformed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInserirParticipanteEmEventoActionPerformedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -169,7 +192,7 @@ public class viewInicial extends javax.swing.JFrame {
                                 .addGap(56, 56, 56)
                                 .addComponent(btBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btInserirParticipanteEmEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btInserirParticipanteEmEventoActionPerformed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
                                 .addComponent(btControleAssociados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(52, 52, 52)
@@ -194,9 +217,9 @@ public class viewInicial extends javax.swing.JFrame {
                     .addComponent(btCampeonatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btInserirParticipanteEmEvento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btControleAssociados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btInserirParticipanteEmEventoActionPerformed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSobre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,12 +264,6 @@ public class viewInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btControleAssociadosActionPerformed
 
-    private void btInserirParticipanteEmEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirParticipanteEmEventoActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new viewCadastroAssociadoCampeonato().setVisible(true);
-    }//GEN-LAST:event_btInserirParticipanteEmEventoActionPerformed
-
     private void btCampeonatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCampeonatosActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -270,6 +287,12 @@ public class viewInicial extends javax.swing.JFrame {
         dispose();//fecha  tela atual
         new viewConfigurações().setVisible(true);//abre a nova tela
     }//GEN-LAST:event_btConfiguracoesActionPerformed
+
+    private void btInserirParticipanteEmEventoActionPerformedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInserirParticipanteEmEventoActionPerformedActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new viewCadastroAssociadoCampeonato().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_btInserirParticipanteEmEventoActionPerformedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,7 +336,7 @@ public class viewInicial extends javax.swing.JFrame {
     private javax.swing.JButton btCampeonatos;
     private javax.swing.JButton btConfiguracoes;
     private javax.swing.JButton btControleAssociados;
-    private javax.swing.JButton btInserirParticipanteEmEvento;
+    private javax.swing.JButton btInserirParticipanteEmEventoActionPerformed;
     private javax.swing.JButton btSobre;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
