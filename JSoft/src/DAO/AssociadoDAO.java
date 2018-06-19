@@ -27,7 +27,7 @@ public class AssociadoDAO {
 
     public boolean adiciona(Associado a){
         
-        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a)){
+        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a) && verificaNumsDoCPF(a)){
             try {
                 PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
                 pst.setString(1, a.getNome());
@@ -41,7 +41,6 @@ public class AssociadoDAO {
 
                 pst.executeUpdate();
 
-                JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e);
@@ -67,6 +66,15 @@ public class AssociadoDAO {
             return true;
         }
     }
+    
+    public boolean verificaNumsDoCPF(Associado a){
+        for (int i = 0; i < a.getCpf().length(); i++) {
+            if (!Character.isDigit(a.getCpf().charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    } 
     
     public boolean validaIdade(Associado a){
        if(a.getIdade()<6 || a.getIdade()>100){

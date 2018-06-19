@@ -177,6 +177,12 @@ public class TestCadastroAssociado {
        assertTrue(asD.validaNmDigCPF(as));
    }
    
+    @Test
+    public void testCadastroCPFInvalidoConterLetras(){
+        as.setCpf("1234a723111");
+        assertFalse(asD.verificaNumsDoCPF(as));
+    }
+   
    @Test
    public void testCadastroIdadeInvalida(){
        as.setIdade(-1);
