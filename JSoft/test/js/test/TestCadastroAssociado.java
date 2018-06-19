@@ -171,4 +171,10 @@ public class TestCadastroAssociado {
        assertFalse(asD.validaNmDigCPF(as));
    }
    
+   @Test
+   public void testCadastroCPFInvalidoPorQtdDigitos2(){
+       as.setCpf("12345672311");
+       assertTrue(asD.validaNmDigCPF(as));
+   }
+   
 }
