@@ -184,6 +184,12 @@ public class TestCadastroAssociado {
     }
     
     @Test
+    public void testCadastroCPFInvalidoConterLetras2(){
+        as.setCpf("asaasasaaas");
+        assertFalse(asD.verificaNumsDoCPF(as));
+    }
+    
+    @Test
     public void testCadastroCPFValidoApenasNum(){
         as.setCpf("12341723111");
         assertTrue(asD.verificaNumsDoCPF(as));
@@ -205,6 +211,12 @@ public class TestCadastroAssociado {
    public void testCadastroIdadeValida(){
        as.setIdade(34);
         assertTrue(asD.validaIdade(as));
+   }
+   
+   @Test
+   public void testCadastroNomeInvalido(){
+       as.setNome("L@ecio");
+       assertFalse(asD.validaNome(as));
    }
    
    
