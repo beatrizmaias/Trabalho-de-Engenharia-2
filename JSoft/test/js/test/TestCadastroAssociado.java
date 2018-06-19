@@ -61,6 +61,19 @@ public class TestCadastroAssociado {
    }
    
    @Test
+   public void testCadastroInvalido2(){
+       as.setCpf("");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Severo Eulalio");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Laecio Andrade Rodrigues");
+       as.setPeso(0);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   @Test
    public void testCamposVazios(){
        as.setCpf("");
        as.setEmail("");
