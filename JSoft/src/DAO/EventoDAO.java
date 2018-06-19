@@ -62,6 +62,15 @@ public class EventoDAO {
         }
     }
     
+    public boolean verificaNumsDadata(Evento e){
+        for (int i = 0; i < e.getData().length(); i++) {
+            if (!Character.isDigit(e.getData().charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public void excluir(Evento e){
         
         try{

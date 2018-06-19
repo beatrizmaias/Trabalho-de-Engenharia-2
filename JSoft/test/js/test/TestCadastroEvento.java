@@ -66,7 +66,9 @@ public class TestCadastroEvento {
        assertFalse(evD.camposVazios(ev));
    }
    
-   
-   
-   
+   @Test
+   public void testDataInvalidaComLetras(){
+       ev.setData("11jun2018");
+       assertFalse(evD.verificaNumsDadata(ev));
+   }
 }
