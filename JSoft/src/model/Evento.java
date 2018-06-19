@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class Evento {
     
@@ -15,24 +15,26 @@ public class Evento {
     private String nome;
     private String data;
     private String faixa;
+    private double valor;
 
     public Evento(){
-        
     }
     
     public Evento(int id){
         this.id = id;
     }
-    public Evento(int id, String nome, String data, String faixa) {
+    public Evento(int id, String nome, String data, String faixa, double valor) {
         this.id = id;
         this.nome = nome;
         this.data = data;
         this.faixa = faixa;
+        this.valor = valor;
     }
-    public Evento(String nome, String data, String faixa) {
+    public Evento(String nome, String data, String faixa, double valor) {
         this.nome = nome;
         this.data = data;
         this.faixa = faixa;
+        this.valor = valor;
     }
 
     public int getId() {
@@ -67,6 +69,12 @@ public class Evento {
         this.faixa = faixa;
     }
     
-    
-    
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
 }

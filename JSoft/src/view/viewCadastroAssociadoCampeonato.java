@@ -19,7 +19,7 @@ import model.EventoParticipante;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
@@ -257,15 +257,41 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
         String faixa = pegarFaixaCampeonato(Integer.parseInt(jcEventos.getSelectedItem().toString()));
         
-//        JOptionPane.showMessageDialog(null, faixa);
-        
         jcAssociado.removeAllItems();
         AssociadoDAO adao = new AssociadoDAO();
         associados = adao.retornaTodos();
         
         for(int i=0; i<associados.size(); i++){
-            if(faixa.equals(associados.get(i).getFaixa().toString())){
-                jcAssociado.addItem(""+associados.get(i).getId());
+            if(faixa.equals("Infantil")){
+                
+                if(associados.get(i).getFaixa().equals("Branco") || associados.get(i).getFaixa().equals("Azul")){
+                    jcAssociado.addItem(associados.get(i).getNome());
+                }
+                
+            } else if(faixa.equals("Juvenil")){
+                
+                if(associados.get(i).getFaixa().equals("Branco") || associados.get(i).getFaixa().equals("Azul")
+                        || associados.get(i).getFaixa().equals("Amarelo") || associados.get(i).getFaixa().equals("Laranja")){
+                    
+                    
+                    
+                    jcAssociado.addItem(associados.get(i).getNome());
+                }
+                
+            } else if(faixa.equals("Junior")){
+
+                if(associados.get(i).getFaixa().equals("Branco") || associados.get(i).getFaixa().equals("Azul")
+                        || associados.get(i).getFaixa().equals("Amarelo") || associados.get(i).getFaixa().equals("Laranja")
+                        || associados.get(i).getFaixa().equals("Roxo")){
+
+                    jcAssociado.addItem(associados.get(i).getNome());
+                    
+                }
+                
+            } else{
+
+                jcAssociado.addItem(associados.get(i).getNome());
+                
             }
         }
     }//GEN-LAST:event_btCarregarAssociadosActionPerformed

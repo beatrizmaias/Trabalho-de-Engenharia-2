@@ -24,7 +24,7 @@ import model.Associado;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewCadastroAssociado extends javax.swing.JFrame {
 
@@ -174,13 +174,13 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
                     .addComponent(btVoltar10))
                 .addGap(2, 2, 2)
                 .addComponent(jLabel26)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome Completo:");
+        jLabel1.setText("Nome:");
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Idade:");
@@ -251,9 +251,8 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -286,7 +285,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jcTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btCancelar)
@@ -365,7 +364,7 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
         
-       /* if(jtNome.getText().toString().equals("") ||
+        /*if(jtNome.getText().toString().equals("") ||
                 jtCpf.getText().toString().equals("") ||
                 jtIdade.getText().toString().equals("") ||
                 jtEmail.getText().toString().equals("") ||
@@ -396,9 +395,6 @@ public class viewCadastroAssociado extends javax.swing.JFrame {
             }else{
                JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!!"); 
             }
-            
-            
-            
         //}
         
     }//GEN-LAST:event_btCadastrarActionPerformed

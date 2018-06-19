@@ -67,6 +67,38 @@ public class TestCadastroEvento {
    }
    
    @Test
+   public void testCadastroEventoInvalido4(){
+       ev.setData("110920181");
+       ev.setFaixa("Branca");
+       ev.setNome("Judoca");
+       assertFalse(evD.adiciona(ev));
+   }
+   
+   @Test
+   public void testCadastroEventoInvalido5(){
+       ev.setData("1109208");
+       ev.setFaixa("Branca");
+       ev.setNome("Judoca");
+       assertFalse(evD.adiciona(ev));
+   }
+   
+   @Test
+   public void testCadastroEventoInvalido6(){
+       ev.setData("11Junho2018");
+       ev.setFaixa("Branca");
+       ev.setNome("Judoca");
+       assertFalse(evD.adiciona(ev));
+   }
+   
+   @Test
+   public void testCadastroEventoInvalido7(){
+       ev.setData("OnzeJunho2018");
+       ev.setFaixa("Branca");
+       ev.setNome("Judoca");
+       assertFalse(evD.adiciona(ev));
+   }
+   
+   @Test
    public void testDataInvalidaComLetras(){
        ev.setData("11jun2018");
        assertFalse(evD.verificaNumsDadata(ev));
@@ -91,14 +123,9 @@ public class TestCadastroEvento {
    }
    
    @Test
-   public void nomeEventoPequeno (){
-       ev.setNome("TI");
-       assertFalse(evD.nomeEventoTest(ev));
+   public void testDataValidaQtdNums(){
+       ev.setData("11042018");
+       assertTrue(evD.verificaQtdNumsData(ev));
    }
    
-   @Test
-   public void nomeEventoMaiorQueDOis(){
-       ev.setNome("TI Week");
-       evD.nomeEventoTest(ev);
-   }
 }

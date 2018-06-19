@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class Associado {
     
@@ -20,9 +20,8 @@ public class Associado {
     private String telefone;
     private double peso;
     private String faixa;
-
-    public Associado(){
     
+    public Associado(){
     }
     
     public Associado(int id){

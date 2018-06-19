@@ -19,7 +19,7 @@ import model.EventoParticipante;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class EventoParticipanteDAO {
     

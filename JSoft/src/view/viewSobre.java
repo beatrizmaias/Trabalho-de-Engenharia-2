@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewSobre extends javax.swing.JFrame {
 

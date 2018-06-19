@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  */
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class ConectaBanco {
 

@@ -5,6 +5,7 @@
  */
 package view;
 
+import DAO.ConfrontoDAO;
 import DAO.EventoDAO;
 import conexao.ConectaBanco;
 import java.sql.ResultSet;
@@ -15,20 +16,20 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import model.Confronto;
 import model.Evento;
+import model.EventoParticipante;
 import model.ModeloTabela;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewCampeonatos extends javax.swing.JFrame {
 
     ConectaBanco conecta = new ConectaBanco();
-    ConectaBanco conecta2 = new ConectaBanco();
+//    ConectaBanco conecta2 = new ConectaBanco();
     int id;
-    
-    ArrayList<String> participantes = new ArrayList<>();
 
     /**
      * Creates new form viewCampeonatos
@@ -58,7 +59,6 @@ public class viewCampeonatos extends javax.swing.JFrame {
             conecta.rs.first();
             do{
                 dado.add(conecta.rs.getInt("id_participante"));
-                System.out.println(""+dado);
             } while(conecta.rs.next());
 
         } catch (SQLException ex) {
@@ -66,12 +66,10 @@ public class viewCampeonatos extends javax.swing.JFrame {
         }
         
         for(int i=0; i<dado.size(); i++){
-            System.out.println("ID - "+dado.get(i));
             conecta.executaSQL("select nome from associado where id='"+dado.get(i)+"'");
             try {
                 conecta.rs.first();
                     nomes.add(new Object[]{conecta.rs.getString("nome")});
-                    System.out.println(""+nomes.get(i));
 
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Dado inválido ou inexistente!"+ex.getMessage());
@@ -79,11 +77,6 @@ public class viewCampeonatos extends javax.swing.JFrame {
 
         }
 
-//        participantes = nomes;
-        
-        for(int i=0; i<nomes.size(); i++){
-            System.out.println("--"+nomes.get(i));
-        }
         
         ModeloTabela modelo = new ModeloTabela(nomes, colunas);
         
@@ -263,6 +256,52 @@ public class viewCampeonatos extends javax.swing.JFrame {
         return id;
     }
     
+    private ArrayList<String> pegarNomesSorteio(){
+        
+        ArrayList<String> nomes = new ArrayList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+        
+        int idEvento = idEventoSelecionado();
+        String cmd = "select distinct id_participante from evento_participante e inner join evento ev where "+idEvento+"=e.id_evento";
+        Statement stmt;
+        ResultSet dados=null;
+        conecta.conexao();
+        try {
+            stmt = conecta.conn.prepareStatement(cmd);
+            dados = stmt.executeQuery(cmd);
+            while(dados.next()){
+                int id = dados.getInt(1);
+                
+                results.add(id);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e);
+        }        
+
+
+
+        String cmd2="";
+        ResultSet dados2=null;
+        for(int i=0; i<results.size(); i++){
+            cmd2="select nome from associado where id='"+results.get(i)+"'";
+            try {
+                stmt = conecta.conn.prepareStatement(cmd2);
+                dados2 = stmt.executeQuery(cmd2);
+                while(dados2.next()){
+                    String nome = dados2.getString(1);
+//                    System.out.println("nome - "+nome);
+                    nomes.add(nome);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro: " + e);
+            }    
+
+        }        
+        
+        
+        return nomes;
+    }
+    
     private void btVoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar10ActionPerformed
         // TODO add your handling code here:
         dispose();
@@ -271,31 +310,57 @@ public class viewCampeonatos extends javax.swing.JFrame {
 
     private void btSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSortearActionPerformed
         // TODO add your handling code here:
-        ArrayList<String> confrontos = new ArrayList<>();
+        ArrayList<Integer> confrontos = new ArrayList<>();
+        ArrayList<String> nomes = new ArrayList<>();
         Random gerador = new Random();
         int aleatorio;
         String nome="";
+
+        nomes = pegarNomesSorteio();
+        int teste=0;
         
-        for(int i=0; i<participantes.size(); i++){
-            System.out.println(participantes.get(i));
-        }
-        
-        /*
-            System.out.println(""+participantes.size());
-            while(participantes.size() >= 0){
-                aleatorio = gerador.nextInt(participantes.size()-1);
-                System.out.println("Aleatorio - "+aleatorio);
-                System.out.println(participantes.get(aleatorio));
-                nome=participantes.get(aleatorio);
-                System.out.println("aqui");
-                    confrontos.add(nome);
-                    participantes.remove(aleatorio);
+        if(nomes.size() == 0){
+            JOptionPane.showMessageDialog(null, "Nenhum participante escolhido!");
+        } else{
+            
+            for(int i=0; i<nomes.size(); i++){
+                aleatorio = gerador.nextInt(nomes.size());
+                teste=0;
+                while(teste < 1){
+                    if(confrontos.contains(aleatorio)){
+                        aleatorio = gerador.nextInt(nomes.size());
+                    } else{
+                        teste++;
+                    }
+                }
+                
+                confrontos.add(aleatorio);
+                
+                
             }
             
-            System.out.println("passou");
-        for(int i=0; i<confrontos.size(); i++){
-            System.out.println(confrontos.get(i));
-        }*/
+        }
+        
+        String confronto="";
+        Confronto c;
+        ConfrontoDAO cdao = new ConfrontoDAO();
+        
+        if((confrontos.size()%2) != 0){
+            String ultimo = nomes.get(confrontos.get(confrontos.size()-1));
+            c = new Confronto(ultimo);
+            confrontos.remove(confrontos.size()-1);
+        }
+
+        for(int i=0; i<confrontos.size(); i=i+2){
+            confronto = nomes.get(confrontos.get(i)) + " X " + nomes.get(confrontos.get(i+1));
+            c = new Confronto(confronto);
+            cdao.adiciona(c);
+        }
+        
+        new viewConfrontos().setVisible(true);
+        dispose();
+        
+
         
     }//GEN-LAST:event_btSortearActionPerformed
 

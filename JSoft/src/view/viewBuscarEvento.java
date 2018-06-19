@@ -19,7 +19,7 @@ import model.ModeloTabela;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewBuscarEvento extends javax.swing.JFrame {
 
@@ -68,6 +68,8 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         btBuscar = new javax.swing.JButton();
         btVoltar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jtValor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -251,38 +253,40 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel8.setText("Valor:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 86, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jtData, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jtFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(225, 225, 225)
-                                .addComponent(btAlterar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btExcluir)))
-                        .addGap(41, 41, 41))))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtData, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtFaixa)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(261, 261, 261)
+                .addComponent(btAlterar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btExcluir)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,6 +297,9 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(jtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
                         .addComponent(jtFaixa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -300,11 +307,11 @@ public class viewBuscarEvento extends javax.swing.JFrame {
                         .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel9)
                         .addComponent(jtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btAlterar)
                     .addComponent(btExcluir))
-                .addGap(43, 43, 43))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,7 +360,7 @@ public class viewBuscarEvento extends javax.swing.JFrame {
 
     private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
         // TODO add your handling code here:
-        Evento e = new Evento(id, jtNome.getText(), jtData.getText(), jtFaixa.getText());
+        Evento e = new Evento(id, jtNome.getText(), jtData.getText(), jtFaixa.getText(), Double.parseDouble(jtValor.getText()));
         EventoDAO edao = new EventoDAO();
         edao.alterar(e);
         preencherTabela("select * from evento order by id");
@@ -387,20 +394,21 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         jtNome.setText(Tabela.getValueAt(indiceLinha, 1).toString());
         jtData.setText(Tabela.getValueAt(indiceLinha, 2).toString());
         jtFaixa.setText(Tabela.getValueAt(indiceLinha, 3).toString());
+        jtValor.setText(Tabela.getValueAt(indiceLinha, 4).toString());
     }//GEN-LAST:event_TabelaMouseClicked
 
     
     public void preencherTabela(String sql){
         ArrayList dados = new ArrayList();
         
-        String[] colunas = new String[]{"Id", "Nome", "Data", "Faixa"};//cria as colunas
+        String[] colunas = new String[]{"Id", "Nome", "Data", "Faixa", "Valor"};//cria as colunas
         
         //retorna todos os dados do banco e manda pro array dados
         conecta.executaSQL(sql);
         try {
             conecta.rs.first();
             do{
-                dados.add(new Object[]{conecta.rs.getInt("id"), conecta.rs.getString("nome"), conecta.rs.getString("data"), conecta.rs.getString("faixa")});
+                dados.add(new Object[]{conecta.rs.getInt("id"), conecta.rs.getString("nome"), conecta.rs.getString("data"), conecta.rs.getString("faixa"), conecta.rs.getDouble("valor")});
             } while(conecta.rs.next());
 
         } catch (SQLException ex) {
@@ -413,14 +421,17 @@ public class viewBuscarEvento extends javax.swing.JFrame {
         Tabela.getColumnModel().getColumn(0).setPreferredWidth(60);
         Tabela.getColumnModel().getColumn(0).setResizable(false);
 
-        Tabela.getColumnModel().getColumn(1).setPreferredWidth(235);
+        Tabela.getColumnModel().getColumn(1).setPreferredWidth(200);
         Tabela.getColumnModel().getColumn(1).setResizable(false);
         
-        Tabela.getColumnModel().getColumn(2).setPreferredWidth(130);
+        Tabela.getColumnModel().getColumn(2).setPreferredWidth(100);
         Tabela.getColumnModel().getColumn(2).setResizable(false);
 
-        Tabela.getColumnModel().getColumn(3).setPreferredWidth(130);
+        Tabela.getColumnModel().getColumn(3).setPreferredWidth(100);
         Tabela.getColumnModel().getColumn(3).setResizable(false);
+
+        Tabela.getColumnModel().getColumn(4).setPreferredWidth(130);
+        Tabela.getColumnModel().getColumn(4).setResizable(false);
 
         Tabela.getTableHeader().setReorderingAllowed(false);
         Tabela.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -477,6 +488,7 @@ public class viewBuscarEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -488,5 +500,6 @@ public class viewBuscarEvento extends javax.swing.JFrame {
     private javax.swing.JTextField jtData;
     private javax.swing.JTextField jtFaixa;
     private javax.swing.JTextField jtNome;
+    private javax.swing.JTextField jtValor;
     // End of variables declaration//GEN-END:variables
 }

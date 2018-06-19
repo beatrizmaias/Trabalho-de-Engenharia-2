@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class Senha {
     

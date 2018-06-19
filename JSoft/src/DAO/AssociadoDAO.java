@@ -17,7 +17,7 @@ import model.Associado;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class AssociadoDAO {
     
@@ -41,15 +41,18 @@ public class AssociadoDAO {
 
                 pst.executeUpdate();
 
+                //JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e);
             }
             return true;
         }else{
-           return false;         
+            return false;
         }
+
     }
+    
     
     public boolean camposVazios(Associado a){
         if(a.getCpf().equals("") || a.getEmail().equals("") || a.getEndereco().equals("") || a.getFaixa().equals("") || a.getNome().equals("") || Integer.toString(a.getIdade()).equals("") || Double.toString(a.getPeso()).equals("") || a.getTelefone().equals("")){
@@ -145,7 +148,8 @@ public class AssociadoDAO {
            return true;
        }
     }
-   
+    
+    
     public void excluir(Associado a){
         
         try{

@@ -7,7 +7,7 @@ package view;
 
 /**
  *
- * @author 
+ * @author Laecio
  */
 public class viewBuscar extends javax.swing.JFrame {
 
