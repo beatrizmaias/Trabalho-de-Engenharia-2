@@ -50,6 +50,14 @@ public class TestCadastroEvento {
        assertFalse(evD.camposVazios(ev));
    }
    
+   @Test
+   public void testCadastroEventoInvalido2(){
+       ev.setData("11092018");
+       ev.setFaixa("");
+       ev.setNome("Judo Infantil");
+       assertFalse(evD.camposVazios(ev));
+   }
+   
    
    
    
