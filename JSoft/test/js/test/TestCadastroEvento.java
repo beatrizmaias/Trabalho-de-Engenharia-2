@@ -88,6 +88,5 @@ public class TestCadastroEvento {
    public void testDataInvalidaQtdNums2(){
        ev.setData("1104201");
        assertFalse(evD.verificaQtdNumsData(ev));
-   }
-   
+   } 
 }

@@ -328,6 +328,7 @@ public class viewBuscarEvento extends javax.swing.JFrame {
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
         // TODO add your handling code here:
+        conecta.conexao();
         preencherTabela("select * from evento where " + (String)jcOpcoesBusca.getSelectedItem() + " like '%"+jtBuscaId.getText()+"%'");
     }//GEN-LAST:event_btBuscarActionPerformed
 
