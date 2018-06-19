@@ -14,7 +14,8 @@ import org.junit.runners.Suite;
 
  @RunWith(Suite.class)
  @Suite.SuiteClasses({
-     TestCadastroAssociado.class
+     TestCadastroAssociado.class,
+     TestCadastroEvento.class
 })
 public class SuiteTest {
        

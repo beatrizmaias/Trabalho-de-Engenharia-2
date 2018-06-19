@@ -30,24 +30,36 @@ public class EventoDAO {
     Connection cn = cc.conexion();
     
     
-    public void adiciona(Evento e){
-        
-        try {
+    public boolean adiciona(Evento e){
+        if(camposVazios(e)){
+            try {
 
-            PreparedStatement pst;
-            pst = cn.prepareStatement("insert into evento (nome, data, faixa) values (?, ?, ?)");
-            pst.setString(1, e.getNome());
-            pst.setString(2, e.getData());
-            pst.setString(3, e.getFaixa());
-            
-            pst.executeUpdate();
+                PreparedStatement pst;
+                pst = cn.prepareStatement("insert into evento (nome, data, faixa) values (?, ?, ?)");
+                pst.setString(1, e.getNome());
+                pst.setString(2, e.getData());
+                pst.setString(3, e.getFaixa());
 
-            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
+                pst.executeUpdate();
 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar evento!"+ex.getMessage());
+                //JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
+                
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar evento!"+ex.getMessage());
+            }
+            return true;
+        }else{
+            return false;
         }
         
+    }
+    
+    public boolean camposVazios(Evento e){
+        if(e.getData().equals("") || e.getFaixa().equals("") || e.getNome().equals("")){
+            return false;
+        }else{
+            return true;
+        }
     }
     
     public void excluir(Evento e){

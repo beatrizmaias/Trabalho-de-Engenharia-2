@@ -16,6 +16,10 @@ public class Evento {
     private String data;
     private String faixa;
 
+    public Evento(){
+        
+    }
+    
     public Evento(int id){
         this.id = id;
     }

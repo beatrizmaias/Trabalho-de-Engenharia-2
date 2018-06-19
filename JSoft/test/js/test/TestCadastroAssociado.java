@@ -271,7 +271,7 @@ public class TestCadastroAssociado {
    @Test
    public void testNumeroValidoConterLetras(){
        as.setTelefone("1234567834");
-       assertFalse(asD.verificaNumsDoTelefone(as));
+       assertTrue(asD.verificaNumsDoTelefone(as));
    }
    
    @Test

@@ -225,21 +225,26 @@ public class viewCadastrarEvento extends javax.swing.JFrame {
 
     private void btCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCadastrarActionPerformed
         // TODO add your handling code here:
-        if(jtNome.getText().toString().equals("")
+        /*if(jtNome.getText().toString().equals("")
                 || jtData.getText().toString().equals("")){
             
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!!");
             
-        } else{
+        } else{*/
             
             Evento e = new Evento(jtNome.getText().toString(), jtData.getText().toString(), jcFaixa.getSelectedItem().toString());
             EventoDAO edao = new EventoDAO();
-            edao.adiciona(e);
+            if(edao.adiciona(e)){
+                JOptionPane.showMessageDialog(null, "Evento cadastrado com sucesso!");
+                dispose();
+                new viewInicial().setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos!!");
+            }
             
-            dispose();
-            new viewInicial().setVisible(true);
             
-        }
+            
+       // }
     }//GEN-LAST:event_btCadastrarActionPerformed
 
     private void btVoltar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar9ActionPerformed
