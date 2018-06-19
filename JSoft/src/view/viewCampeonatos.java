@@ -6,15 +6,16 @@
 package view;
 
 import DAO.EventoDAO;
-import DAO.EventoParticipanteDAO;
 import conexao.ConectaBanco;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import model.Evento;
 import model.ModeloTabela;
 
 /**
@@ -26,6 +27,8 @@ public class viewCampeonatos extends javax.swing.JFrame {
     ConectaBanco conecta = new ConectaBanco();
     ConectaBanco conecta2 = new ConectaBanco();
     int id;
+    
+    ArrayList<String> participantes = new ArrayList<>();
 
     /**
      * Creates new form viewCampeonatos
@@ -35,11 +38,11 @@ public class viewCampeonatos extends javax.swing.JFrame {
         jcEventos.removeAllItems();
 
         EventoDAO edao = new EventoDAO();
-        ArrayList<String> nomes = new ArrayList<>();
-        nomes = edao.retornaTodos();
+        ArrayList<Evento> eventos = new ArrayList<>();
+        eventos = edao.retornaTodos();
         
-        for(int i=0; i<nomes.size(); i++){
-            jcEventos.addItem(nomes.get(i));
+        for(int i=0; i<eventos.size(); i++){
+            jcEventos.addItem(eventos.get(i).getNome());
         }
     }
 
@@ -54,13 +57,12 @@ public class viewCampeonatos extends javax.swing.JFrame {
         try {
             conecta.rs.first();
             do{
-//                dados.add(new Object[]{conecta.rs.getInt("id_participante")});
                 dado.add(conecta.rs.getInt("id_participante"));
                 System.out.println(""+dado);
             } while(conecta.rs.next());
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Dado inválido ou inexistente!");
+            JOptionPane.showMessageDialog(null, "Evento sem participantes inseridos!");
         }
         
         for(int i=0; i<dado.size(); i++){
@@ -77,6 +79,11 @@ public class viewCampeonatos extends javax.swing.JFrame {
 
         }
 
+//        participantes = nomes;
+        
+        for(int i=0; i<nomes.size(); i++){
+            System.out.println("--"+nomes.get(i));
+        }
         
         ModeloTabela modelo = new ModeloTabela(nomes, colunas);
         
@@ -132,6 +139,11 @@ public class viewCampeonatos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Tabela);
 
         btSortear.setText("Sortear");
+        btSortear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSortearActionPerformed(evt);
+            }
+        });
 
         jPanel12.setBackground(new java.awt.Color(0, 102, 204));
         jPanel12.setPreferredSize(new java.awt.Dimension(811, 226));
@@ -225,10 +237,16 @@ public class viewCampeonatos extends javax.swing.JFrame {
     private void btEscolherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEscolherActionPerformed
         // TODO add your handling code here:
 
-        conecta.conexao();
-        String cmd = "select distinct id_participante from evento_participante e inner join evento ev where "+Integer.parseInt(jcEventos.getSelectedItem().toString())+"=e.id_evento";
+        int idEvento = idEventoSelecionado();
+        String cmd = "select distinct id_participante from evento_participante e inner join evento ev where "+idEvento+"=e.id_evento";
+        preencherTabela(cmd);
         
-        ArrayList<String> results = new ArrayList<>();
+    }//GEN-LAST:event_btEscolherActionPerformed
+
+    private int idEventoSelecionado(){
+        int id = 0;
+        
+        String cmd = "select id from evento where nome='"+jcEventos.getSelectedItem().toString()+"'";
         
         Statement stmt;
         ResultSet dados=null;
@@ -237,22 +255,49 @@ public class viewCampeonatos extends javax.swing.JFrame {
             stmt = conecta.conn.prepareStatement(cmd);
             dados = stmt.executeQuery(cmd);
             while(dados.next()){
-                String usuario = ""+dados.getString(1);
-                results.add(usuario);
+                id = dados.getInt(1);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e);
-        }
-        
-        preencherTabela(cmd);
-        
-    }//GEN-LAST:event_btEscolherActionPerformed
-
+        }        
+        return id;
+    }
+    
     private void btVoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar10ActionPerformed
         // TODO add your handling code here:
         dispose();
         new viewInicial().setVisible(true);
     }//GEN-LAST:event_btVoltar10ActionPerformed
+
+    private void btSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSortearActionPerformed
+        // TODO add your handling code here:
+        ArrayList<String> confrontos = new ArrayList<>();
+        Random gerador = new Random();
+        int aleatorio;
+        String nome="";
+        
+        for(int i=0; i<participantes.size(); i++){
+            System.out.println(participantes.get(i));
+        }
+        
+        /*
+            System.out.println(""+participantes.size());
+            while(participantes.size() >= 0){
+                aleatorio = gerador.nextInt(participantes.size()-1);
+                System.out.println("Aleatorio - "+aleatorio);
+                System.out.println(participantes.get(aleatorio));
+                nome=participantes.get(aleatorio);
+                System.out.println("aqui");
+                    confrontos.add(nome);
+                    participantes.remove(aleatorio);
+            }
+            
+            System.out.println("passou");
+        for(int i=0; i<confrontos.size(); i++){
+            System.out.println(confrontos.get(i));
+        }*/
+        
+    }//GEN-LAST:event_btSortearActionPerformed
 
     /**
      * @param args the command line arguments

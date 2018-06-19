@@ -25,28 +25,41 @@ public class AssociadoDAO {
     Conectar cc = new Conectar();
     Connection cn = cc.conexion();
 
-    public void adiciona(Associado a){
+    public boolean adiciona(Associado a){
         
-        try {
-            PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
-            pst.setString(1, a.getNome());
-            pst.setString(2, a.getCpf());
-            pst.setInt(3, a.getIdade());
-            pst.setString(4, a.getEmail());
-            pst.setString(5, a.getEndereco());
-            pst.setString(6, a.getTelefone());
-            pst.setDouble(7, a.getPeso());
-            pst.setString(8, a.getFaixa());
-            
-            pst.executeUpdate();
-            
-            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e);
-        }
+        if(camposVazios(a)){
+            try {
+                PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
+                pst.setString(1, a.getNome());
+                pst.setString(2, a.getCpf());
+                pst.setInt(3, a.getIdade());
+                pst.setString(4, a.getEmail());
+                pst.setString(5, a.getEndereco());
+                pst.setString(6, a.getTelefone());
+                pst.setDouble(7, a.getPeso());
+                pst.setString(8, a.getFaixa());
 
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!");
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro ao cadastrar: " + e);
+            }
+            return true;
+        }else{
+           return false;         
+        }
     }
+    
+    public boolean camposVazios(Associado a){
+        if(a.getCpf().equals("") || a.getEmail().equals("") || a.getEndereco().equals("") || a.getFaixa().equals("") || a.getNome().equals("") || Integer.toString(a.getIdade()).equals("") || Double.toString(a.getPeso()).equals("") || a.getTelefone().equals("")){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
     
     public void excluir(Associado a){
         
@@ -74,10 +87,10 @@ public class AssociadoDAO {
         
     }
     
-    public ArrayList<String> retornaTodos(){
-        ArrayList<String> results = new ArrayList<>();
+    public ArrayList<Associado> retornaTodos(){
+        ArrayList<Associado> results = new ArrayList<>();
         
-        String cmd = "select id from associado";
+        String cmd = "select * from associado";
         Statement stmt;
         ResultSet dados=null;
         c.conexao();
@@ -85,8 +98,19 @@ public class AssociadoDAO {
             stmt = c.conn.prepareStatement(cmd);
             dados = stmt.executeQuery(cmd);
             while(dados.next()){
-                String usuario = dados.getString(1);
-                results.add(usuario);
+                int id = dados.getInt(1);
+                String nome = dados.getString(2);
+                String cpf = dados.getString(3);
+                int idade = dados.getInt(4);
+                String email = dados.getString(5);
+                String endereco = dados.getString(6);
+                String telefone = dados.getString(7);
+                double peso = dados.getDouble(8);
+                String faixa = dados.getString(9);
+                
+                Associado a = new Associado(id, nome, cpf, idade, email, endereco, telefone, peso, faixa);
+                
+                results.add(a);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e);
@@ -94,29 +118,5 @@ public class AssociadoDAO {
         
         return results;
     }        
-    
-    public ArrayList<String> retornaNomesAssociados(String faixa){
         
-        ArrayList<String> results = new ArrayList<>();
-        
-        String cmd = "select nome from associado where faixa = '"+ faixa +"'";
-        Statement stmt;
-        ResultSet dados=null;
-        c.conexao();
-        try {
-            stmt = c.conn.prepareStatement(cmd);
-            dados = stmt.executeQuery(cmd);
-            while(dados.next()){
-                String usuario = dados.getString(1);
-                results.add(usuario);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro: " + e);
-        }
-        
-        return results;
-        
-        
-    }
-    
 }

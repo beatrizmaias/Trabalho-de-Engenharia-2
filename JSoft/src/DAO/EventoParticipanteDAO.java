@@ -73,10 +73,10 @@ public class EventoParticipanteDAO {
         
     }
 
-    public ArrayList<String> retornaTodos(){
-        ArrayList<String> results = new ArrayList<>();
+    public ArrayList<EventoParticipante> retornaTodos(){
+        ArrayList<EventoParticipante> results = new ArrayList<>();
         
-        String cmd = "select id from evento_participante";
+        String cmd = "select * from evento_participante";
         Statement stmt;
         ResultSet dados=null;
         c.conexao();
@@ -84,8 +84,12 @@ public class EventoParticipanteDAO {
             stmt = c.conn.prepareStatement(cmd);
             dados = stmt.executeQuery(cmd);
             while(dados.next()){
-                String usuario = dados.getString(1);
-                results.add(usuario);
+                int id = dados.getInt(1);
+                int id_participante = dados.getInt(2);
+                int id_evento = dados.getInt(3);
+                
+                EventoParticipante e = new EventoParticipante(id, id_evento, id_participante);
+                results.add(e);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro: " + e);

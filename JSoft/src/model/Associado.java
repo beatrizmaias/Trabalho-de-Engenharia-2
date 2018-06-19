@@ -21,6 +21,10 @@ public class Associado {
     private double peso;
     private String faixa;
 
+    public Associado(){
+    
+    }
+    
     public Associado(int id){
         this.id = id;
     }

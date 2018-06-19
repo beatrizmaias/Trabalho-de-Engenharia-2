@@ -13,6 +13,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import model.Associado;
+import model.Evento;
 import model.EventoParticipante;
 
 /**
@@ -21,7 +23,7 @@ import model.EventoParticipante;
  */
 public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
-
+    
     /**
      * Creates new form viewCadastroAssociadoCampeonato
      */
@@ -29,15 +31,16 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
         
         initComponents();
 
-        ArrayList<String> eventos = new ArrayList<>();
+        ArrayList<Evento> eventos = new ArrayList<>();
 
         jcAssociado.removeAllItems();
         jcEventos.removeAllItems();
 
         EventoDAO edao = new EventoDAO();
         eventos = edao.retornaTodos();
+        
         for(int i=0; i<eventos.size(); i++){
-            jcEventos.addItem(eventos.get(i));
+            jcEventos.addItem(""+eventos.get(i).getId());
         }        
 
     }
@@ -250,18 +253,20 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
 
     private void btCarregarAssociadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCarregarAssociadosActionPerformed
         // TODO add your handling code here:
-        ArrayList<String> associados = new ArrayList<>();
+        ArrayList<Associado> associados = new ArrayList<>();
 
         String faixa = pegarFaixaCampeonato(Integer.parseInt(jcEventos.getSelectedItem().toString()));
         
-        JOptionPane.showMessageDialog(null, faixa);
+//        JOptionPane.showMessageDialog(null, faixa);
         
         jcAssociado.removeAllItems();
         AssociadoDAO adao = new AssociadoDAO();
-        associados = adao.retornaNomesAssociados(faixa);
+        associados = adao.retornaTodos();
         
         for(int i=0; i<associados.size(); i++){
-            jcAssociado.addItem(associados.get(i));
+            if(faixa.equals(associados.get(i).getFaixa().toString())){
+                jcAssociado.addItem(""+associados.get(i).getId());
+            }
         }
     }//GEN-LAST:event_btCarregarAssociadosActionPerformed
 
