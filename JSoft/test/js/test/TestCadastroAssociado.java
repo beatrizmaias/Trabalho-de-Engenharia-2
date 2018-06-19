@@ -183,4 +183,10 @@ public class TestCadastroAssociado {
         assertFalse(asD.validaIdade(as));
    }
    
+   @Test
+   public void testCadastroIdadeInvalida2(){
+       as.setIdade(130);
+        assertFalse(asD.validaIdade(as));
+   }
+   
 }
