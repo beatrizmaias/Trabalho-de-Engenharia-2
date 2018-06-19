@@ -113,6 +113,19 @@ public class TestCadastroAssociado {
    }
    
    @Test
+   public void testCadastroInvalido6(){
+       as.setCpf("00000000000");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("");
+       as.setPeso(0);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   @Test
    public void testCamposVazios(){
        as.setCpf("");
        as.setEmail("");
