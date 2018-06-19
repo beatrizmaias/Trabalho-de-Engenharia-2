@@ -126,6 +126,20 @@ public class TestCadastroAssociado {
    }
    
    @Test
+   public void testCadastroInvalido7(){
+       as.setCpf("00000000000");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Darkside Opera Faster");
+       as.setPeso(0);
+       as.setTelefone("");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   
+   @Test
    public void testCamposVazios(){
        as.setCpf("");
        as.setEmail("");
