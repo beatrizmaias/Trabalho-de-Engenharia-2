@@ -58,6 +58,14 @@ public class TestCadastroEvento {
        assertFalse(evD.camposVazios(ev));
    }
    
+   @Test
+   public void testCadastroEventoInvalido3(){
+       ev.setData("11092018");
+       ev.setFaixa("Branca");
+       ev.setNome("");
+       assertFalse(evD.camposVazios(ev));
+   }
+   
    
    
    
