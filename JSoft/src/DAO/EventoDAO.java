@@ -31,7 +31,7 @@ public class EventoDAO {
     
     
     public boolean adiciona(Evento e){
-        if(camposVazios(e) && nomeEventoTest(e)){
+        if(camposVazios(e)){
             try {
 
                 PreparedStatement pst;
