@@ -71,6 +71,14 @@ public class EventoDAO {
         return true;
     }
     
+    public boolean verificaQtdNumsData(Evento e){
+        if(e.getData().length()!=8){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
     public void excluir(Evento e){
         
         try{
