@@ -286,5 +286,11 @@ public class TestCadastroAssociado {
        assertFalse(asD.validaPeso(as));
    }
    
+   @Test
+   public void testPesoValido(){
+       as.setPeso(60);
+       assertTrue(asD.validaPeso(as));
+   }
+   
    
 }
