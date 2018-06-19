@@ -71,4 +71,10 @@ public class TestCadastroEvento {
        ev.setData("11jun2018");
        assertFalse(evD.verificaNumsDadata(ev));
    }
+   
+   @Test
+   public void testDataValidasemLetras(){
+       ev.setData("11042019");
+       assertTrue(evD.verificaNumsDadata(ev));
+   }
 }
