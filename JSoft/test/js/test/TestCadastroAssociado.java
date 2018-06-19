@@ -146,11 +146,62 @@ public class TestCadastroAssociado {
        as.setFaixa("Branca");
        as.setIdade(19);
        as.setNome("Darkside Opera Faster");
-       as.setPeso(0);
+       as.setPeso(45);
        as.setTelefone("89994000000");
        assertFalse(asD.adiciona(as));
    }
    
+   @Test
+   public void testCadastroInvalido9(){
+       as.setCpf("0000000a000");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("D@rkside Opera Faster");
+       as.setPeso(45);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   @Test
+   public void testCadastroInvalido10(){
+       as.setCpf("00000000000");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Darkside Opera Faster");
+       as.setPeso(45);
+       as.setTelefone("8999400000a");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   @Test
+   public void testCadastroInvalido11(){
+       as.setCpf("00000000000");
+       as.setEmail("laecio8andrade.gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Darkside Opera Faster");
+       as.setPeso(45);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
+   
+   @Test
+   public void testCadastroInvalido12(){
+       as.setCpf("meucpf");
+       as.setEmail("laecio8andrade.gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Darkside Opera Faster");
+       as.setPeso(45);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
    
    @Test
    public void testCamposVazios(){
@@ -208,6 +259,25 @@ public class TestCadastroAssociado {
         assertTrue(asD.verificaNumsDoCPF(as));
     }
    
+    
+    @Test
+    public void testCadastroEmailInvalido(){
+        as.setEmail("laecio8andrade@gmail");
+        assertFalse(asD.validaEmail(as));
+    }
+    
+    @Test
+    public void testCadastroEmailInvalido2(){
+        as.setEmail("laecio8andrade.gmail.com");
+        assertFalse(asD.validaEmail(as));
+    }
+    
+    @Test
+    public void testCadastroEmailValido(){
+        as.setEmail("laecio8andrade@gmail.com");
+        assertTrue(asD.validaEmail(as));
+    }
+    
    @Test
    public void testCadastroIdadeInvalida(){
        as.setIdade(-1);
@@ -285,7 +355,7 @@ public class TestCadastroAssociado {
        as.setPeso(950);
        assertFalse(asD.validaPeso(as));
    }
-   
+  
    @Test
    public void testPesoValido(){
        as.setPeso(60);

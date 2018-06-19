@@ -27,7 +27,7 @@ public class AssociadoDAO {
 
     public boolean adiciona(Associado a){
         
-        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a) && verificaNumsDoCPF(a) && validaNome(a) && validaTelefone(a)){
+        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a) && verificaNumsDoCPF(a) && validaNome(a) && validaTelefone(a) && verificaNumsDoTelefone(a) && validaPeso(a) && validaEmail(a)){
             try {
                 PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
                 pst.setString(1, a.getNome());
@@ -84,6 +84,18 @@ public class AssociadoDAO {
        }
     }
     
+    public boolean validaEmail(Associado a){
+        int i = a.getEmail().indexOf("@");
+        if(i<0){
+            return false;
+        }
+        i = a.getEmail().indexOf(".");
+        if(i<0){
+            return false;
+        }
+        return true;
+    }
+    
     public boolean validaNome(Associado a){
         int i = a.getNome().indexOf("@");
         if(i>=0){
@@ -133,7 +145,7 @@ public class AssociadoDAO {
            return true;
        }
     }
-    
+   
     public void excluir(Associado a){
         
         try{
