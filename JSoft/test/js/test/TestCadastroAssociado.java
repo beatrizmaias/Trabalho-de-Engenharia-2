@@ -164,4 +164,11 @@ public class TestCadastroAssociado {
        as.setTelefone("89994000000");
        assertTrue(asD.camposVazios(as));
    }
+   
+   @Test
+   public void testCadastroCPFInvalidoPorQtdDigitos(){
+       as.setCpf("1234567");
+       assertFalse(asD.validaNmDigCPF(as));
+   }
+   
 }

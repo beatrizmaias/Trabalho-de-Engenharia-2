@@ -27,7 +27,7 @@ public class AssociadoDAO {
 
     public boolean adiciona(Associado a){
         
-        if(camposVazios(a)){
+        if(camposVazios(a) && validaNmDigCPF(a)){
             try {
                 PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
                 pst.setString(1, a.getNome());
@@ -54,6 +54,14 @@ public class AssociadoDAO {
     
     public boolean camposVazios(Associado a){
         if(a.getCpf().equals("") || a.getEmail().equals("") || a.getEndereco().equals("") || a.getFaixa().equals("") || a.getNome().equals("") || Integer.toString(a.getIdade()).equals("") || Double.toString(a.getPeso()).equals("") || a.getTelefone().equals("")){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    public boolean validaNmDigCPF(Associado a){
+        if(a.getCpf().length()!=11){
             return false;
         }else{
             return true;
