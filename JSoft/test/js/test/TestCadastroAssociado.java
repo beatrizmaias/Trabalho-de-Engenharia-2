@@ -138,6 +138,19 @@ public class TestCadastroAssociado {
        assertFalse(asD.adiciona(as));
    }
    
+   @Test
+   public void testCadastroInvalido8(){
+       as.setCpf("0000000a000");
+       as.setEmail("laecio8andrade@gmail.com");
+       as.setEndereco("Rua Beutrano de Tal");
+       as.setFaixa("Branca");
+       as.setIdade(19);
+       as.setNome("Darkside Opera Faster");
+       as.setPeso(0);
+       as.setTelefone("89994000000");
+       assertFalse(asD.adiciona(as));
+   }
+   
    
    @Test
    public void testCamposVazios(){
@@ -223,6 +236,12 @@ public class TestCadastroAssociado {
    public void testCadastroNomeValido(){
        as.setNome("Laecio Andrade");
        assertTrue(asD.validaNome(as));
+   }
+   
+   @Test
+   public void testQtdDigitNumTel(){
+       as.setTelefone("1234567891234556");
+       assertFalse(asD.validaTelefone(as));
    }
    
    
