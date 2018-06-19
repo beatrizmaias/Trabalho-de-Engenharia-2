@@ -177,4 +177,10 @@ public class TestCadastroAssociado {
        assertTrue(asD.validaNmDigCPF(as));
    }
    
+   @Test
+   public void testCadastroIdadeInvalida(){
+       as.setIdade(-1);
+        assertFalse(asD.validaIdade(as));
+   }
+   
 }

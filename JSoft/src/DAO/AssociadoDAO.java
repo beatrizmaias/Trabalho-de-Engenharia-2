@@ -27,7 +27,7 @@ public class AssociadoDAO {
 
     public boolean adiciona(Associado a){
         
-        if(camposVazios(a) && validaNmDigCPF(a)){
+        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a)){
             try {
                 PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
                 pst.setString(1, a.getNome());
@@ -66,6 +66,14 @@ public class AssociadoDAO {
         }else{
             return true;
         }
+    }
+    
+    public boolean validaIdade(Associado a){
+       if(a.getIdade()<6 || a.getIdade()>100){
+           return false;
+       }else{
+           return true;
+       }
     }
     
     
