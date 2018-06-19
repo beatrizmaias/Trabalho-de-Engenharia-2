@@ -47,8 +47,10 @@ public class TestCadastroEvento {
        ev.setData("");
        ev.setFaixa("Branca");
        ev.setNome("Judo Infantil");
-       assertTrue(evD.camposVazios(ev));
+       assertFalse(evD.camposVazios(ev));
    }
+   
+   
    
    
 }
