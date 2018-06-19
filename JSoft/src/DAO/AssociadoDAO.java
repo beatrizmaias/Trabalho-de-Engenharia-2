@@ -27,7 +27,7 @@ public class AssociadoDAO {
 
     public boolean adiciona(Associado a){
         
-        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a) && verificaNumsDoCPF(a) && validaNome(a)){
+        if(camposVazios(a) && validaNmDigCPF(a) && validaIdade(a) && verificaNumsDoCPF(a) && validaNome(a) && validaTelefone(a)){
             try {
                 PreparedStatement pst = cn.prepareStatement("insert into associado (nome, cpf, idade, email, endereco, telefone, peso, faixa) values (?, ?, ?, ?, ?, ?, ?, ?)");
                 pst.setString(1, a.getNome());
@@ -117,6 +117,14 @@ public class AssociadoDAO {
         }
     }
     
+   public boolean verificaNumsDoTelefone(Associado a){
+        for (int i = 0; i < a.getTelefone().length(); i++) {
+            if (!Character.isDigit(a.getTelefone().charAt(i))) {
+                return false;
+            }
+        }
+        return true;
+    } 
     
     public void excluir(Associado a){
         
