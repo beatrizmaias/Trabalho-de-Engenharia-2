@@ -88,5 +88,17 @@ public class TestCadastroEvento {
    public void testDataInvalidaQtdNums2(){
        ev.setData("1104201");
        assertFalse(evD.verificaQtdNumsData(ev));
-   } 
+   }
+   
+   @Test
+   public void nomeEventoPequeno (){
+       ev.setNome("TI");
+       assertFalse(evD.nomeEventoTest(ev));
+   }
+   
+   @Test
+   public void nomeEventoMaiorQueDOis(){
+       ev.setNome("TI Week");
+       evD.nomeEventoTest(ev);
+   }
 }
