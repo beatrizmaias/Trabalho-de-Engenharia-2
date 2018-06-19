@@ -110,7 +110,7 @@ public class AssociadoDAO {
     }
     
     public boolean validaTelefone(Associado a){
-        if(a.getTelefone().length()<8 || a.getTelefone().length()>13){
+        if(a.getTelefone().length()<8 || a.getTelefone().length()>15){
             return false;
         }else{
             return true;
