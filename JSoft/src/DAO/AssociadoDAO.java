@@ -125,6 +125,14 @@ public class AssociadoDAO {
         }
         return true;
     } 
+   
+   public boolean validaPeso(Associado a){
+       if(a.getPeso()<17 || a.getPeso()>250){
+           return false;
+       }else{
+           return true;
+       }
+    }
     
     public void excluir(Associado a){
         

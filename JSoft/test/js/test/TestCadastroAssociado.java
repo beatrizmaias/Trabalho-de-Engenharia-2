@@ -274,4 +274,11 @@ public class TestCadastroAssociado {
        assertFalse(asD.verificaNumsDoTelefone(as));
    }
    
+   @Test
+   public void testPesoInvalido(){
+       as.setPeso(2);
+       assertFalse(asD.validaPeso(as));
+   }
+   
+   
 }
