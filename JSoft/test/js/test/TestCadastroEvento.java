@@ -39,6 +39,7 @@ public class TestCadastroEvento {
        ev.setData("11042018");
        ev.setFaixa("Branca");
        ev.setNome("Judo Infantil");
+       ev.setValor(100);
        assertTrue(evD.camposVazios(ev));
    }
    
@@ -47,6 +48,7 @@ public class TestCadastroEvento {
        ev.setData("");
        ev.setFaixa("Branca");
        ev.setNome("Judo Infantil");
+       ev.setValor(100);
        assertFalse(evD.camposVazios(ev));
    }
    
@@ -55,6 +57,7 @@ public class TestCadastroEvento {
        ev.setData("11092018");
        ev.setFaixa("");
        ev.setNome("Judo Infantil");
+       ev.setValor(100);
        assertFalse(evD.camposVazios(ev));
    }
    
@@ -63,6 +66,7 @@ public class TestCadastroEvento {
        ev.setData("11092018");
        ev.setFaixa("Branca");
        ev.setNome("");
+       ev.setValor(100);
        assertFalse(evD.camposVazios(ev));
    }
    
@@ -71,6 +75,7 @@ public class TestCadastroEvento {
        ev.setData("110920181");
        ev.setFaixa("Branca");
        ev.setNome("Judoca");
+       ev.setValor(100);
        assertFalse(evD.adiciona(ev));
    }
    
@@ -79,6 +84,7 @@ public class TestCadastroEvento {
        ev.setData("1109208");
        ev.setFaixa("Branca");
        ev.setNome("Judoca");
+       ev.setValor(100);
        assertFalse(evD.adiciona(ev));
    }
    
@@ -87,6 +93,7 @@ public class TestCadastroEvento {
        ev.setData("11Junho2018");
        ev.setFaixa("Branca");
        ev.setNome("Judoca");
+       ev.setValor(100);
        assertFalse(evD.adiciona(ev));
    }
    
@@ -95,6 +102,15 @@ public class TestCadastroEvento {
        ev.setData("OnzeJunho2018");
        ev.setFaixa("Branca");
        ev.setNome("Judoca");
+       ev.setValor(100);
+       assertFalse(evD.adiciona(ev));
+   }
+   
+   public void testCadastroEventoInvalido8(){
+       ev.setData("11082018");
+       ev.setFaixa("Branca");
+       ev.setNome("Judoca");
+       ev.setValor(-1);
        assertFalse(evD.adiciona(ev));
    }
    
@@ -128,4 +144,15 @@ public class TestCadastroEvento {
        assertTrue(evD.verificaQtdNumsData(ev));
    }
    
+   @Test
+   public void tsetValorInvalido(){
+       ev.setValor(-1);
+       assertFalse(evD.valorEvento(ev));
+   }
+   
+   @Test
+   public void tsetValorValido(){
+       ev.setValor(100);
+       assertTrue(evD.valorEvento(ev));
+   }
 }

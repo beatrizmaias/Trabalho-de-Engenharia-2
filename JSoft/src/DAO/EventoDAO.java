@@ -32,7 +32,7 @@ public class EventoDAO {
     
     public boolean adiciona(Evento e){
         
-        if(camposVazios(e) && verificaNumsDadata(e) && verificaQtdNumsData(e) && nomeEventoTest(e)){
+        if(camposVazios(e) && verificaNumsDadata(e) && verificaQtdNumsData(e) && nomeEventoTest(e) && valorEvento(e)){
             try {
 
                 PreparedStatement pst;
@@ -87,6 +87,14 @@ public class EventoDAO {
             return false;
         else
             return true;
+    }
+    
+    public boolean valorEvento(Evento e){
+        if(e.getValor()<0){
+            return false;
+        }else{
+            return true;
+        }
     }
     
     

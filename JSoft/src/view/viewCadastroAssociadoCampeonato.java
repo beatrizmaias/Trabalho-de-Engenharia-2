@@ -265,7 +265,7 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
             if(faixa.equals("Infantil")){
                 
                 if(associados.get(i).getFaixa().equals("Branco") || associados.get(i).getFaixa().equals("Azul")){
-                    jcAssociado.addItem(associados.get(i).getNome());
+                    jcAssociado.addItem(""+associados.get(i).getId());
                 }
                 
             } else if(faixa.equals("Juvenil")){
@@ -275,7 +275,7 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
                     
                     
                     
-                    jcAssociado.addItem(associados.get(i).getNome());
+                    jcAssociado.addItem(""+associados.get(i).getId());
                 }
                 
             } else if(faixa.equals("Junior")){
@@ -284,16 +284,17 @@ public class viewCadastroAssociadoCampeonato extends javax.swing.JFrame {
                         || associados.get(i).getFaixa().equals("Amarelo") || associados.get(i).getFaixa().equals("Laranja")
                         || associados.get(i).getFaixa().equals("Roxo")){
 
-                    jcAssociado.addItem(associados.get(i).getNome());
+                    jcAssociado.addItem(""+associados.get(i).getId());
                     
                 }
                 
             } else{
 
-                jcAssociado.addItem(associados.get(i).getNome());
+                jcAssociado.addItem(""+associados.get(i).getId());
                 
             }
         }
+        
     }//GEN-LAST:event_btCarregarAssociadosActionPerformed
 
     private void btVoltar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltar10ActionPerformed

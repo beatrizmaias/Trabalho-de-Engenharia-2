@@ -237,8 +237,14 @@ public class TestCadastroAssociado {
    
    @Test
    public void testCadastroCPFInvalidoPorQtdDigitos2(){
-       as.setCpf("12345672311");
-       assertTrue(asD.validaNmDigCPF(as));
+       as.setCpf("123456723111");
+       assertFalse(asD.validaNmDigCPF(as));
+   }
+   
+   @Test
+   public void testCadastroCPFValidoPorQtdDigitos(){
+        as.setCpf("12345678912");
+        assertTrue(asD.validaNmDigCPF(as));    
    }
    
     @Test
