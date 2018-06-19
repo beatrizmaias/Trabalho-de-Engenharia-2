@@ -262,4 +262,10 @@ public class TestCadastroAssociado {
        assertFalse(asD.verificaNumsDoTelefone(as));
    }
    
+   @Test
+   public void testNumeroInavlidoConterLetras2(){
+       as.setTelefone("asderfda");
+       assertFalse(asD.verificaNumsDoTelefone(as));
+   }
+   
 }
