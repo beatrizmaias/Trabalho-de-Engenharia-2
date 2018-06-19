@@ -9,7 +9,7 @@ public class Conectar {
     public Connection conexion(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conectar=DriverManager.getConnection("jdbc:mysql://localhost/jsoft","root","");
+            conectar=DriverManager.getConnection("jdbc:mysql://localhost/jsoft","root","bosta");
         } catch (Exception e) {
             System.out.print(e.getMessage());
         }

@@ -31,7 +31,7 @@ public class EventoDAO {
     
     
     public boolean adiciona(Evento e){
-        if(camposVazios(e)){
+        if(camposVazios(e) && nomeEventoTest(e)){
             try {
 
                 PreparedStatement pst;
@@ -77,6 +77,13 @@ public class EventoDAO {
         }else{
             return true;
         }
+    }
+    
+    public boolean nomeEventoTest (Evento e){
+        if (e.getNome().length() <3)
+            return false;
+        else
+            return true;
     }
     
     public void excluir(Evento e){
