@@ -250,5 +250,10 @@ public class TestCadastroAssociado {
        assertFalse(asD.validaTelefone(as));
    }
    
+   @Test
+   public void testQtdDigitNumTelValid(){
+       as.setTelefone("34511267");
+       assertTrue(asD.validaTelefone(as));
+   }
    
 }
