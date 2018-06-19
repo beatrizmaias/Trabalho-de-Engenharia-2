@@ -215,8 +215,14 @@ public class TestCadastroAssociado {
    
    @Test
    public void testCadastroNomeInvalido(){
-       as.setNome("L@ecio");
+       as.setNome("L@ecio Andrade");
        assertFalse(asD.validaNome(as));
+   }
+   
+   @Test
+   public void testCadastroNomeValido(){
+       as.setNome("Laecio Andrade");
+       assertTrue(asD.validaNome(as));
    }
    
    
